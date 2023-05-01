@@ -1,0 +1,16 @@
+{
+    "name": "pomoduro",
+    "short_name": "pomoduro",
+    "start_url": "index.html",
+    "icons": [
+        {
+            "src": "res/icons/pomoDuro.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait"
+}

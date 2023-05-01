@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+
+:root {
+    --blueRegular: #518a58;
+    --blueLight: #639669;
+    --blueDark: #4a7f51;
+
+    --grey: #0d1117;
+
+    --base: #d95550;
+    --white: #ffffff;
+    --card: #dc635e;
+    --grey1: #e9e9ed;
+
+    --blueRegular: #397097;
+    --blueLight: #4d7fa2;
+    --blueDark: #34678b;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+html,
+body {
+    align-items: center;
+    background-color: var(--blueRegular);
+    display: flex;
+    flex-direction: column;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    height: 100%;
+    transition: 1s;
+    user-select: none;
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    padding: 2% 0 2% 0;
+    width: 95%;
+    height: 60px;
+    max-width: 620px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000025;
+}
+
+header h1 {
+    font-size: 20px;
+    /* margin-left: 2px; */
+    font-weight: bold;
+    color: var(--white);
+}
+
+#logo {
+    display: flex;
+    text-decoration: none;
+}
+
+#logo img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5%;
+}
+
+#duroList,
+#todoListTasks,
+main {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 480px;
+    /* width: fit-content; */
+    /* min-width: fit-content; */
+    border-radius: 6px;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0 30px;
+    flex-direction: column;
+    background-color: #ffffff15;
+}
+
+#todoListTasks {
+    padding: 0;
+    height: auto;
+    overflow: auto;
+    background-color: transparent;
+}
+
+.todoListCard {
+    text-align: left;
+    padding: 6%;
+    font-size: 16pt;
+    width: 100%;
+    background-color: var(--blueLight);
+    color: var(--white);
+    font-weight: bold;
+    border: 0;
+    border-radius: 2%;
+    display: table-row;
+    margin: 0 0 2% 0;
+    cursor: pointer;
+}
+main nav,
+main ul {
+    width: 100%;
+}
+
+#timer {
+    color: var(--white);
+    font-size: 86pt;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#pomodoro-durations {
+    width: 100%;
+}
+
+#pomodoroStopButton,
+#timerControlButton {
+    border: 0;
+    width: 200px;
+    cursor: pointer;
+    font-size: 12pt;
+    margin-top: 20px;
+    color: var(--blueRegular);
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 12.2px 20px;
+    background-color: var(--white);
+    box-shadow: #d6d6d6 0px 6px 0px;
+}
+
+#settingsControlButton {
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 12px;
+    background-color: #222222;
+    display: inline-block;
+    margin: 0 2% 2% 0;
+}
+
+#pomodoro-study,
+#pomodoro-break,
+#settingsOpenControlButton {
+    cursor: pointer;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+    padding: 6px 16px 6px 16px;
+    height: auto;
+    color: #ffffff;
+    background-color: var(--blueLight);
+}
+
+#pomodoro-study,
+#pomodoro-break {
+    background-color: transparent;
+    width: 25%;
+}
+#pomodoro-timer-mode-active {
+    background-color: var(--blueRegular);
+}
+
+#settings {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#settings-content {
+    background-color: var(--white);
+    height: fit-content;
+    margin: auto;
+    border-radius: 6px;
+}
+
+#settings-footer {
+    font-size: 12px;
+    padding: 2% 0 2% 0;
+    border-top: 1px solid var(--grey);
+}
+
+#settings-footer a {
+    color: var(--blueRegular);
+}
+
+#settings-footer li + li::before {
+    content: ' | ';
+}
+#settings-footer ul li {
+    display: inline;
+}
+
+#settings-dedication,
+#settings-license {
+    padding: 2% 0 0 0;
+}
+
+#settings-header {
+    border-bottom: 1px solid #d6d6d6;
+    padding: 0 0 2% 0;
+}
+#settings-header h1 {
+    font-weight: bold;
+    color: #222222;
+}
+
+#settings-input {
+    margin: 2% 0 2% 0;
+}
+
+#settings-close {
+    color: var(--blueDark);
+    float: right;
+    font-weight: bold;
+}
+
+#settings-note {
+    padding: 2% 0 2% 0;
+    color: #666666;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#settings,
+#settings-content {
+    padding: 20px 20px 20px 20px;
+    animation: modal-animation;
+    animation-duration: 0.5s;
+}
+
+#settings-close:hover,
+#settings-lose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#timeWork,
+#timeBreak {
+    border-radius: 6px;
+    background-color: rgb(239, 239, 239);
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: none;
+    border: medium none;
+    color: rgb(85, 85, 85);
+    width: 50%;
+    box-sizing: border-box;
+}
+
+#duroList {
+    /* align-items: first baseline; */
+    background-color: transparent;
+    flex-direction: row;
+}
+
+#addTask {
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 12px;
+    height: 64px;
+    color: #222222;
+}
+
+#listControlButton {
+    border: 1px dashed #ffffff;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 25%;
+    background-color: var(--blueLight);
+    cursor: pointer;
+    height: 64px;
+    margin-left: 5%;
+}
+
+#listControlButton:hover {
+    background-color: var(--blueDark);
+}
+
+input {
+    outline: none;
+}
+
+label {
+    font-size: 12x;
+    display: inline-block;
+    width: 86px;
+    color: #666666;
+    font-weight: bold;
+}

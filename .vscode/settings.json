@@ -1,0 +1,21 @@
+{
+    "editor.rulers": [80],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "postcssSorting.config": {
+        "properties-order": "alphabetical"
+    },
+    "prettier.singleQuote": true,
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 80
+}
