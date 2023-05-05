@@ -15,89 +15,89 @@
 
 <body>
     <header>
-        <a id='logo' href='/pomoduro'>
-            <img src='res/icons/pomoDuro-white.png'>
+        <a id="logo" href="/pomoduro">
+            <img src="res/icons/pomoDuro-white.png">
             <h1>POMODURO</h1>
         </a>
         <nav>
             <ul>
                 <li>
-                    <input id='settingsOpenControlButton' type='button' value='Settings' onclick='pomoDuroSettings()' />
+                    <input id="settingsOpenControlButton" type="button" value="Settings" onclick="pomoDuroSettings()" />
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <nav id='pomodoro-durations'>
+        <nav id="pomodoro-durations">
             <ul>
                 <li>
-                    <input id='pomodoro-study' type='button' value='Study' />
-                    <input id='pomodoro-break' type='button' value='Break' />
+                    <input id="pomodoro-study" type="button" value="Study" />
+                    <input id="pomodoro-break" type="button" value="Break" />
                 </li>
             </ul>
         </nav>
 
-        <div id='pomoDuro'>
+        <div id="pomoDuro">
             <span id="timer" name="study"></span>
-            <input id='timerControlButton' type='button' value='START' onclick='pomoDuroStartTimer()' />
-            <input id='pomodoroStopButton' type='button' value='STOP' onclick='pomoDuroResetTimer()' />
+            <input id="timerControlButton" type="button" value="START" onclick="pomoDuroStartTimer()" />
+            <input id="pomodoroStopButton" type="button" value="STOP" onclick="pomoDuroResetTimer()" />
         </div>
     </main>
 
-    <div id='duroList'>
-        <input id='addTask' type='text' placeholder='Add task' autocomplete='off' />
-        <input id='listControlButton' type='button' value='Add Task' onclick='duroListAddTask()'>
+    <div id="duroList">
+        <input id="addTask" type="text" placeholder="Add task" autocomplete="off" />
+        <input id="listControlButton" type="button" value="Add Task" onclick="duroListAddTask()">
     </div>
 
-    <div id='todoListTasks'></div>
+    <div id="todoListTasks"></div>
 
-    <div id='settings'>
-        <div id='settings-content'>
-            <div id='settings-header'>
-                <span id='settings-close'>&times;</span>
+    <div id="settings">
+        <div id="settings-content">
+            <div id="settings-header">
+                <span id="settings-close">&times;</span>
                 <h1>Settings</h1>
             </div>
-            <p id='settings-note'>&#8251; Updating the settings will reload the POMODURO Web App.</p>
-            <div id='settings-input'>
+            <p id="settings-note">&#8251; Updating the settings will reload the POMODURO Web App.</p>
+            <div id="settings-input">
                 <label>Work time</label>
-                <input id='timeWork' type='number' min='1' step='1' />
+                <input id="timeWork" type="number" min="1" step="1" />
             </div>
-            <div id='settings-input'>
+            <div id="settings-input">
                 <label>Break time</label>
-                <input id='timeBreak' type='number' min='1' step='1' />
+                <input id="timeBreak" type="number" min="1" step="1" />
             </div>
             <div>
-                <input id='settingsControlButton' type='button' value='Save Pomodoro settings'
-                    onclick='settingsReload();' />
-                <input id='settingsControlButton' type='button' value='Reset Pomodoro settings'
-                    onclick='settingsResetPomodoro();' />
-                <input id='settingsControlButton' type='button' value='Reset To do list'
-                    onclick='settingsResetTodoList()' />
+                <input id="settingsControlButton" type="button" value="Save Pomodoro settings"
+                    onclick="settingsReload();" />
+                <input id="settingsControlButton" type="button" value="Reset Pomodoro settings"
+                    onclick="settingsResetPomodoro();" />
+                <input id="settingsControlButton" type="button" value="Reset To do list"
+                    onclick="settingsResetTodoList()" />
             </div>
-            <div id='settings-footer'>
+            <div id="settings-footer">
                 <div>
                     <ul>
                         <li><a href="/pomoduro">Home</a></li>
-                        <li><a id='url-about' target="_blank" rel="noopener noreferrer">About</a></li>
-                        <li><a id='url-github' target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        <li><a id='url-license' target="_blank" rel="noopener noreferrer">License</a></li>
+                        <li><a id="url-about" target="_blank" rel="noopener noreferrer">About</a></li>
+                        <li><a id="url-github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a id="url-license" target="_blank" rel="noopener noreferrer">License</a></li>
                     </ul>
                 </div>
-                <div id='settings-license'>
-                    <p id='year'>Provided under the MIT License &copy;</p>
+                <div id="settings-license">
+                    <p id="year">Provided under the MIT License &copy;</p>
                 </div>
-                <div id='settings-dedication'>
+                <div id="settings-dedication">
                     &#x1F468;&#x200D;&#x1F4BB; with &#x1F90D; for &#x1F41D;
                 </div>
             </div>
         </div>
     </div>
 
-    <script src='src/js/config.js'></script>
-    <script src='src/js/settings.js'></script>
-    <script src='src/js/timer.js'></script>
-    <script src='src/js/todo.js'></script>
+    <script src="src/js/config.js"></script>
+    <script src="src/js/settings.js"></script>
+    <script src="src/js/timer.js"></script>
+    <script src="src/js/todo.js"></script>
 </body>
 
 </html>
