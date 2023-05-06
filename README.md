@@ -55,7 +55,7 @@ POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 
 #### To do
 
-[ ] Add more features to To do list
+-   [ ] Add more features to To do list
 
 ##### Bugs
 
