@@ -61,8 +61,6 @@ const pomoDuroStartTimer = () => {
             ? pomoduroStudyTime * 60
             : pomoduroBreakTime * 60;
 
-    console.log(countDown);
-
     intervalID = setInterval(() => {
         countDown--;
         minute = (countDown / 60) >> (countDown / 60) % 1;
@@ -89,7 +87,6 @@ const pomoDuroResetTimer = () => {
 };
 
 const updateButton = () => {
-    // document.getElementById('timerControlButton').value = 'START';
     timerControlButton.value = 'START';
     timerControlButton.onclick = () => {
         pomoDuroStartTimer();
