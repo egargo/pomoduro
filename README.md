@@ -1,6 +1,7 @@
 <div align="center">
     <img alt="pomoDuro" src="./res/icons/pomoDuro.png" height='32'/><h1>POMODURO</h1>
     <p>A simple productivity tool.</p>
+    <img src="./preview.png" height='512' alt="pomoDuro">
     <div>
         <img alt="license" src="https://img.shields.io/github/license/egargo/pomoduro?color=blue&style=for-the-badge"/>
         <img alt="languages" src="https://img.shields.io/github/languages/top/egargo/pomoduro?style=for-the-badge"/>
@@ -9,7 +10,7 @@
         <img alt="deployments" src="https://img.shields.io/github/deployments/egargo/pomoduro/github-pages?color=blue&style=for-the-badge"/>
         <img alt="website" src="https://img.shields.io/website?down_color=red&down_message=down&up_color=blue&up_message=up&url=https%3A%2F%2Fegargo.github.io%2Fpomoduro?&style=for-the-badge"/>
     </div>
-    <img src="./preview.png" height='512' alt="pomoDuro">
+
 </div>
 
 ## Contents
