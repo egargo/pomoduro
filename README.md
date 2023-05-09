@@ -1,14 +1,15 @@
 <div align="center">
-    <img alt="pomoDuro" src="./res/icons/pomoDuro.png" height='32'/><h1>POMODURO</h1>
+    <img alt="pomoDuro" src="./res/icons/pomoDuro-violet.png" height='32'/><h1>POMODURO</h1>
     <p>A simple productivity tool.</p>
-    <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" height='512' alt="pomoDuro"></a>
+        <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" height='512' alt="pomoDuro">
+    </a>
     <div>
-        <img alt="license" src="https://img.shields.io/github/license/egargo/pomoduro?color=blue&style=for-the-badge"/>
-        <img alt="languages" src="https://img.shields.io/github/languages/top/egargo/pomoduro?style=for-the-badge"/>
-        <img alt="repo-size" src="https://img.shields.io/github/repo-size/egargo/pomoduro?&style=for-the-badge"/>
-        <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?color=blue&style=for-the-badge"></a>
-        <img alt="deployments" src="https://img.shields.io/github/deployments/egargo/pomoduro/github-pages?color=blue&style=for-the-badge"/>
-        <img alt="website" src="https://img.shields.io/website?down_color=red&down_message=down&up_color=blue&up_message=up&url=https%3A%2F%2Fegargo.github.io%2Fpomoduro?&style=for-the-badge"/>
+        <img alt="license" src="https://img.shields.io/github/license/egargo/pomoduro?labelColor=white&color=561981&style=for-the-badge"/>
+        <img alt="languages" src="https://img.shields.io/github/languages/top/egargo/pomoduro?labelColor=white&color=561981&style=for-the-badge"/>
+        <img alt="repo-size" src="https://img.shields.io/github/repo-size/egargo/pomoduro?labelColor=white&color=561981&style=for-the-badge"/>
+        <a rel="noopener noreferrer" href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?labelColor=white&color=561981&style=for-the-badge"></a>
+        <img alt="deployments" src="https://img.shields.io/github/deployments/egargo/pomoduro/github-pages?labelColor=white&color=561981&style=for-the-badge"/>
+        <a rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img alt="website" src="https://img.shields.io/website?labelColor=white&down_color=red&down_message=down&up_color=561981&up_message=up&url=https%3A%2F%2Fegargo.github.io%2Fpomoduro?&style=for-the-badge"/></a>
     </div>
 
 </div>
