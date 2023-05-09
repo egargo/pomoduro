@@ -16,7 +16,7 @@ const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
 
 const pomoduroNotifyMessage = (notifyMessage) => {
     new Notification('POMODURO', {
-        icon: 'res/icons/pomoDuro.png',
+        icon: 'res/icons/pomoDuro-white.png',
         body: notifyMessage,
     });
 };
@@ -51,7 +51,8 @@ const pomoduroReset = () => {
 const pomoDuroStartTimer = () => {
     pomoduroSendNotify('Start');
     timerControlButton.value = 'PAUSE';
-    timerControlButton.style.boxShadow = '#ffffff 0px 6px 0px';
+    timerControlButton.style.color = '#561981';
+    timerControlButton.style.backgroundColor = '#ffffff';
     timerControlButton.onclick = () => {
         pomoDuroPauseTimer();
     };
@@ -80,6 +81,9 @@ const pomoDuroPauseTimer = () => {
 };
 
 const pomoDuroResetTimer = () => {
+    timerControlButton.style.backgroundColor = 'transparent';
+    timerControlButton.style.color = '#ffffff';
+    timerControlButton.style = 'hover';
     pomoduroSendNotify('Reset');
     updateButton();
     clearInterval(intervalID);
@@ -91,7 +95,6 @@ const updateButton = () => {
     timerControlButton.onclick = () => {
         pomoDuroStartTimer();
     };
-    timerControlButton.style.boxShadow = '#d6d6d6 0px 6px 0px';
 };
 
 const pomoduroSwitchTimerMode = () => {
@@ -99,18 +102,20 @@ const pomoduroSwitchTimerMode = () => {
     let pomodoro_break = document.getElementById('pomodoro-break');
     let pomodoro_timer = document.getElementById('pomoduroTimer');
 
-    pomodoro_study.style = 'background-color: #397097';
+    // pomodoro_study.style = 'background-color: #561981';
 
     pomodoro_study.addEventListener('click', () => {
-        pomodoro_study.style = 'background-color: #397097';
+        pomodoro_study.style.backgroundColor = '#561981';
+        pomodoro_study.style.color = '#ffffff';
         pomodoro_break.style = 'none';
         pomodoro_timer.setAttribute('name', 'study');
         pomodoro_timer.innerText = pomoduroStudyTime + ':00';
     });
 
     pomodoro_break.addEventListener('click', () => {
-        pomodoro_break.style = 'background-color: #397097';
-        pomodoro_study.style = 'none';
+        pomodoro_break.style.backgroundColor = '#561981';
+        pomodoro_break.style.color = '#ffffff';
+        pomodoro_study.style.backgroundColor = 'transparent';
         pomodoro_timer.setAttribute('name', 'break');
         pomodoro_timer.innerText = pomoduroBreakTime + ':00';
     });
