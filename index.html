@@ -5,8 +5,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="res/icons/pomoDuro.png" />
+    <link rel="icon" type="image/x-icon" href="res/icons/pomoDuro-white.png" />
     <link rel="manifest" href="manifest.json" />
+    <meta name="application-name" content="POMODURO">
+    <meta name="theme-color" content="#561981">
+    <meta name="description" content="A description of the page">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="google" content="notranslate">
+    <meta property="og:url" content="https://egargo.github.io/pomoduro">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="POMODURO">
+    <meta property="og:image" content="https://egargo.github.io/pomoduro/preview.png">
+    <meta property="og:image:alt" content="POMODURO">
+    <meta property="og:description" content="A simple productivity tool.">
+    <meta property="og:site_name" content="POMODURO">
+    <meta property="og:locale" content="en_GB">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <noscript>POMODURO requires JavaScript to run.</noscript>
@@ -16,7 +32,7 @@
 <body>
     <header>
         <a id="logo" href="/pomoduro">
-            <img src="res/icons/pomoDuro-white.png">
+            <img src="res/icons/pomoDuro-violet.png">
             <h1>POMODURO</h1>
         </a>
         <div>
@@ -41,7 +57,7 @@
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
             <input id="timerControlButton" type="button" value="START" onclick="pomoDuroStartTimer()" />
-            <input id="pomodoroStopButton" type="button" value="STOP" onclick="pomoDuroResetTimer()" />
+            <input id="pomodoroStopButton" type="button" value="RESET" onclick="pomoDuroResetTimer()" />
         </div>
     </main>
 
