@@ -1,31 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
 
 :root {
-    --blueRegular: #518a58;
-    --blueLight: #639669;
-    --blueDark: #4a7f51;
-
-    --grey: #0d1117;
-
-    --base: #d95550;
+    --violet: #561981;
+    --dark: #360d51;
     --white: #ffffff;
-    --card: #dc635e;
-    --grey1: #e9e9ed;
-
-    --blueRegular: #397097;
-    --blueLight: #4d7fa2;
-    --blueDark: #34678b;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    scrollbar-color: var(--white) transparent;
 }
 
 html,
 body {
     align-items: center;
-    background-color: var(--blueRegular);
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -37,6 +27,7 @@ body {
 
 header {
     align-items: center;
+    border-bottom: 1px solid var(--violet);
     display: flex;
     padding: 2% 0 2% 0;
     width: 95%;
@@ -44,13 +35,12 @@ header {
     max-width: 620px;
     margin-bottom: 40px;
     justify-content: space-between;
-    border-bottom: 1px solid #00000025;
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: 16pt;
     font-weight: bold;
-    color: var(--white);
+    color: var(--violet);
 }
 
 #logo {
@@ -67,6 +57,7 @@ header h1 {
 #duroList,
 #todoListTasks,
 main {
+    border: 1px solid var(--violet);
     width: 90%;
     display: flex;
     margin: 0 auto;
@@ -76,14 +67,15 @@ main {
     text-align: center;
     padding: 30px 0 30px;
     flex-direction: column;
-    background-color: #ffffff15;
+    background-image: url('../../res/icons/waves.svg');
 }
 
 #todoListTasks {
     padding: 0;
     height: auto;
     overflow: auto;
-    background-color: transparent;
+    background-color: var(--white);
+    border: 0;
 }
 
 .todoListCard {
@@ -91,7 +83,7 @@ main {
     padding: 6%;
     font-size: 16pt;
     width: 100%;
-    background-color: var(--blueLight);
+    background-color: var(--violet);
     color: var(--white);
     font-weight: bold;
     border: 0;
@@ -99,6 +91,9 @@ main {
     display: table-row;
     margin: 0 0 2% 0;
     cursor: pointer;
+    background-image: url('../../res/icons/waves.svg');
+    background-position: 0%;
+    background-clip: inherit;
 }
 main nav,
 main ul {
@@ -107,7 +102,7 @@ main ul {
 
 #pomoduroTimer {
     color: var(--white);
-    font-size: 86pt;
+    font-size: 76pt;
     display: inline-block;
     width: 100%;
     margin-top: 20px;
@@ -120,17 +115,23 @@ main ul {
 
 #pomodoroStopButton,
 #timerControlButton {
-    border: 0;
+    border: 1px solid var(--white);
     width: 200px;
     cursor: pointer;
     font-size: 12pt;
     margin-top: 20px;
-    color: var(--blueRegular);
+    color: var(--white);
     border-radius: 6px;
     font-weight: bold;
     padding: 12.2px 20px;
+    background-color: transparent;
+    /* background-color: var(--white); */
+    /* box-shadow: #d6d6d6 0px 6px 0px; */
+}
+#pomodoroStopButton:hover,
+#timerControlButton:hover {
+    color: var(--violet);
     background-color: var(--white);
-    box-shadow: #d6d6d6 0px 6px 0px;
 }
 
 #settingsControlButton {
@@ -138,9 +139,10 @@ main ul {
     border-radius: 6px;
     cursor: pointer;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 12pt;
+    font-weight: bold;
     padding: 6px 12px;
-    background-color: #222222;
+    background-color: var(--violet);
     display: inline-block;
     margin: 0 2% 2% 0;
 }
@@ -155,17 +157,20 @@ main ul {
     text-align: center;
     padding: 6px 16px 6px 16px;
     height: auto;
-    color: #ffffff;
-    background-color: var(--blueLight);
+    color: var(--white);
+    background-color: var(--violet);
 }
 
 #pomodoro-study,
 #pomodoro-break {
-    background-color: transparent;
+    /* background-color: wheat; */
     width: 25%;
 }
-#pomodoro-timer-mode-active {
-    background-color: var(--blueRegular);
+#pomodoro-study {
+    background-color: var(--violet);
+}
+#pomodoro-break {
+    background-color: transparent;
 }
 
 #settings {
@@ -178,7 +183,7 @@ main ul {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(82, 25, 129, 0.5);
 }
 
 #settings-content {
@@ -191,11 +196,11 @@ main ul {
 #settings-footer {
     font-size: 12px;
     padding: 2% 0 2% 0;
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--violet);
 }
 
 #settings-footer a {
-    color: var(--blueRegular);
+    color: var(--violet);
 }
 
 #settings-footer li + li::before {
@@ -211,12 +216,12 @@ main ul {
 }
 
 #settings-header {
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1px solid var(--violet);
     padding: 0 0 2% 0;
 }
 #settings-header h1 {
     font-weight: bold;
-    color: #222222;
+    color: var(--violet);
 }
 
 #settings-input {
@@ -224,14 +229,14 @@ main ul {
 }
 
 #settings-close {
-    color: var(--blueDark);
+    color: var(--violet);
     float: right;
     font-weight: bold;
 }
 
 #settings-note {
     padding: 2% 0 2% 0;
-    color: #666666;
+    color: var(--violet);
     font-weight: bold;
     font-size: 12px;
 }
@@ -239,13 +244,13 @@ main ul {
 #settings,
 #settings-content {
     padding: 20px 20px 20px 20px;
-    animation: modal-animation;
     animation-duration: 0.5s;
 }
 
 #settings-close:hover,
 #settings-lose:focus {
-    color: #000;
+    color: var(--dark);
+    font-weight: bold;
     text-decoration: none;
     cursor: pointer;
 }
@@ -253,47 +258,49 @@ main ul {
 #timeWork,
 #timeBreak {
     border-radius: 6px;
-    background-color: rgb(239, 239, 239);
-    font-size: 16px;
-    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--violet);
+    font-size: 12pt;
+    padding: 12px;
     box-shadow: none;
-    border: medium none;
-    color: rgb(85, 85, 85);
+    color: var(--violet);
+    font-weight: bold;
     width: 50%;
     box-sizing: border-box;
 }
 
 #duroList {
-    background-color: transparent;
+    background-color: var(--white);
     flex-direction: row;
+    background-image: none;
+    border: 0;
 }
 
 #addTask {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--violet);
     border-radius: 6px;
     width: 70%;
-    font-size: 16px;
+    font-size: 12pt;
     font-weight: bold;
     padding-left: 12px;
     height: 64px;
-    color: #222222;
+    color: var(--violet);
+}
+::placeholder {
+    color: var(--violet);
 }
 
 #listControlButton {
-    border: 1px dashed #ffffff;
+    border: 0;
     border-radius: 6px;
-    color: #ffffff;
-    font-size: 16px;
+    color: var(--white);
+    font-size: 12pt;
     font-weight: bold;
     width: 25%;
-    background-color: var(--blueLight);
+    background-color: var(--violet);
     cursor: pointer;
     height: 64px;
     margin-left: 5%;
-}
-
-#listControlButton:hover {
-    background-color: var(--blueDark);
 }
 
 input {
@@ -301,9 +308,9 @@ input {
 }
 
 label {
-    font-size: 12x;
+    font-size: 12pt;
     display: inline-block;
     width: 86px;
-    color: #666666;
+    color: var(--violet);
     font-weight: bold;
 }
