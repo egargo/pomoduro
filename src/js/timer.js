@@ -16,7 +16,8 @@ const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
 
 const pomoduroNotifyMessage = (notifyMessage) => {
     new Notification('POMODURO', {
-        icon: 'res/icons/pomoDuro-white.png',
+        // icon: 'res/icons/pomoDuro-white.png',
+        icon: '🍅',
         body: notifyMessage,
     });
 };
@@ -43,16 +44,18 @@ let intervalID, countDown, minute;
 
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
-    document.title = 'POMODURO';
+    document.title = '🍅 POMODURO';
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
 };
 
 // Start pomoDuro timer.
 const pomoDuroStartTimer = () => {
-    pomoduroSendNotify('Start');
-    timerControlButton.value = 'PAUSE';
-    timerControlButton.style.color = '#561981';
-    timerControlButton.style.backgroundColor = '#ffffff';
+    pomoduroSendNotify(
+        pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
+    );
+    timerControlButton.value = '⏸️ PAUSE';
+    // timerControlButton.style.color = '#561981';
+    // timerControlButton.style.backgroundColor = '#ffffff';
     timerControlButton.onclick = () => {
         pomoDuroPauseTimer();
     };
@@ -65,7 +68,7 @@ const pomoDuroStartTimer = () => {
     intervalID = setInterval(() => {
         countDown--;
         minute = (countDown / 60) >> (countDown / 60) % 1;
-        document.title = minute + ':' + (countDown % 60) + ' | POMODURO';
+        document.title = minute + ':' + (countDown % 60) + ' | 🍅 POMODURO';
         pomoduroTimer.innerText = minute + ':' + (countDown % 60);
 
         if (countDown === 0) {
@@ -81,17 +84,17 @@ const pomoDuroPauseTimer = () => {
 };
 
 const pomoDuroResetTimer = () => {
-    timerControlButton.style.backgroundColor = 'transparent';
-    timerControlButton.style.color = '#ffffff';
+    // timerControlButton.style.backgroundColor = 'transparent';
+    // timerControlButton.style.color = '#ffffff';
     timerControlButton.style = 'hover';
-    pomoduroSendNotify('Reset');
+    pomoduroSendNotify('☕');
     updateButton();
     clearInterval(intervalID);
     pomoduroReset();
 };
 
 const updateButton = () => {
-    timerControlButton.value = 'START';
+    timerControlButton.value = '▶️ START';
     timerControlButton.onclick = () => {
         pomoDuroStartTimer();
     };
@@ -105,17 +108,18 @@ const pomoduroSwitchTimerMode = () => {
     // pomodoro_study.style = 'background-color: #561981';
 
     pomodoro_study.addEventListener('click', () => {
-        pomodoro_study.style.backgroundColor = '#561981';
-        pomodoro_study.style.color = '#ffffff';
+        pomodoro_study.style.backgroundColor = '#dbdcdd';
+        pomodoro_study.style.color = '#121212';
         pomodoro_break.style = 'none';
         pomodoro_timer.setAttribute('name', 'study');
         pomodoro_timer.innerText = pomoduroStudyTime + ':00';
     });
 
     pomodoro_break.addEventListener('click', () => {
-        pomodoro_break.style.backgroundColor = '#561981';
-        pomodoro_break.style.color = '#ffffff';
+        pomodoro_break.style.backgroundColor = '#dbdcdd';
+        pomodoro_break.style.color = '#121212';
         pomodoro_study.style.backgroundColor = 'transparent';
+        pomodoro_study.style.color = '#121212';
         pomodoro_timer.setAttribute('name', 'break');
         pomodoro_timer.innerText = pomoduroBreakTime + ':00';
     });
