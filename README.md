@@ -18,15 +18,15 @@
 
 ## 📋 Contents
 
--   [About](#ℹ️-about)
--   [Features](#✨-features)
--   [To do](#📝-to-do)
--   [Technologies used](#💻-technologies-used)
-    -   [Programming lanugages](#💾-programming-languages)
-    -   [Other tools](#🧰-other-tools)
--   [License](#📄-license)
-    -   [POMODURO](#🍅-pomoduro)
-    -   [Other resources](#🧰-other-resources)
+-   [About](#️-about)
+-   [Features](#-features)
+-   [To do](#-to-do)
+-   [Technologies used](#-technologies-used)
+    -   [Programming lanugages](#-programming-languages)
+    -   [Other tools](#-other-tools)
+-   [License](#-license)
+    -   [POMODURO](#-pomoduro)
+    -   [Other resources](#-other-resources)
 
 ### ℹ️ About
 
