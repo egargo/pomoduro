@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
 
 :root {
-    --violet: #561981;
-    --dark: #360d51;
+    --chinese-black: #121212;
+    --gainsboro: #dbdcdd;
+    --congo-pink: #fb7b7b;
     --white: #ffffff;
+    --cultured: #f6f5f4;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    scrollbar-color: var(--white) transparent;
+    scrollbar-color: var(--congo-pink) transparent;
 }
 
 html,
@@ -25,22 +27,26 @@ body {
     width: 100%;
 }
 
-header {
+#header {
     align-items: center;
-    border-bottom: 1px solid var(--violet);
+    /* border-bottom: 1px solid var(--congo-pink); */
+    background-color: #f6f5f4;
     display: flex;
-    padding: 2% 0 2% 0;
-    width: 95%;
+    padding: 12pt 20pt 12pt 20pt;
+    width: 100%;
     height: 60px;
-    max-width: 620px;
     margin-bottom: 40px;
     justify-content: space-between;
 }
 
-header h1 {
-    font-size: 16pt;
+header {
+    width: 100%;
+}
+
+#header h1 {
+    font-size: 12pt;
     font-weight: bold;
-    color: var(--violet);
+    color: var(--chinese-black);
 }
 
 #logo {
@@ -57,7 +63,6 @@ header h1 {
 #duroList,
 #todoListTasks,
 main {
-    border: 1px solid var(--violet);
     width: 90%;
     display: flex;
     margin: 0 auto;
@@ -67,7 +72,7 @@ main {
     text-align: center;
     padding: 30px 0 30px;
     flex-direction: column;
-    background-image: url('../../res/icons/waves.svg');
+    background-color: var(--cultured);
 }
 
 #todoListTasks {
@@ -83,17 +88,12 @@ main {
     padding: 6%;
     font-size: 16pt;
     width: 100%;
-    background-color: var(--violet);
-    color: var(--white);
+    color: var(--chinese-black);
     font-weight: bold;
-    border: 0;
     border-radius: 2%;
-    display: table-row;
-    margin: 0 0 2% 0;
+    margin: 0 0 6px 0;
     cursor: pointer;
-    background-image: url('../../res/icons/waves.svg');
-    background-position: 0%;
-    background-clip: inherit;
+    background-color: var(--cultured);
 }
 main nav,
 main ul {
@@ -101,7 +101,7 @@ main ul {
 }
 
 #pomoduroTimer {
-    color: var(--white);
+    color: var(--chinese-black);
     font-size: 76pt;
     display: inline-block;
     width: 100%;
@@ -115,22 +115,15 @@ main ul {
 
 #pomodoroStopButton,
 #timerControlButton {
-    border: 1px solid var(--white);
+    border: 0;
     width: 200px;
     cursor: pointer;
     font-size: 12pt;
     margin-top: 20px;
-    color: var(--white);
+    color: var(--chinese-black);
     border-radius: 6px;
     font-weight: bold;
     padding: 12.2px 20px;
-    background-color: transparent;
-    /* background-color: var(--white); */
-    /* box-shadow: #d6d6d6 0px 6px 0px; */
-}
-#pomodoroStopButton:hover,
-#timerControlButton:hover {
-    color: var(--violet);
     background-color: var(--white);
 }
 
@@ -138,11 +131,10 @@ main ul {
     border: 0;
     border-radius: 6px;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--white);
     font-size: 12pt;
-    font-weight: bold;
     padding: 6px 12px;
-    background-color: var(--violet);
+    background-color: var(--chinese-black);
     display: inline-block;
     margin: 0 2% 2% 0;
 }
@@ -158,16 +150,16 @@ main ul {
     padding: 6px 16px 6px 16px;
     height: auto;
     color: var(--white);
-    background-color: var(--violet);
+    background-color: var(--chinese-black);
 }
 
 #pomodoro-study,
 #pomodoro-break {
-    /* background-color: wheat; */
+    color: var(--chinese-black);
     width: 25%;
 }
 #pomodoro-study {
-    background-color: var(--violet);
+    background-color: var(--gainsboro);
 }
 #pomodoro-break {
     background-color: transparent;
@@ -183,7 +175,7 @@ main ul {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(82, 25, 129, 0.5);
+    background-color: rgba(246, 245, 244, 0.5);
 }
 
 #settings-content {
@@ -196,11 +188,11 @@ main ul {
 #settings-footer {
     font-size: 12px;
     padding: 2% 0 2% 0;
-    border-top: 1px solid var(--violet);
+    border-top: 1px solid var(--chinese-black);
 }
 
 #settings-footer a {
-    color: var(--violet);
+    color: var(--congo-pink);
 }
 
 #settings-footer li + li::before {
@@ -216,12 +208,12 @@ main ul {
 }
 
 #settings-header {
-    border-bottom: 1px solid var(--violet);
+    border-bottom: 1px solid var(--chinese-black);
     padding: 0 0 2% 0;
 }
 #settings-header h1 {
     font-weight: bold;
-    color: var(--violet);
+    color: var(--chinese-black);
 }
 
 #settings-input {
@@ -229,14 +221,14 @@ main ul {
 }
 
 #settings-close {
-    color: var(--violet);
+    color: var(--congo-pink);
     float: right;
     font-weight: bold;
 }
 
 #settings-note {
     padding: 2% 0 2% 0;
-    color: var(--violet);
+    color: var(--chinese-black);
     font-weight: bold;
     font-size: 12px;
 }
@@ -259,11 +251,11 @@ main ul {
 #timeBreak {
     border-radius: 6px;
     background-color: var(--white);
-    border: 1px solid var(--violet);
+    border: 1px solid var(--chinese-black);
     font-size: 12pt;
     padding: 12px;
     box-shadow: none;
-    color: var(--violet);
+    color: var(--chinese-black);
     font-weight: bold;
     width: 50%;
     box-sizing: border-box;
@@ -277,27 +269,28 @@ main ul {
 }
 
 #addTask {
-    border: 1px solid var(--violet);
+    border: 1px solid var(--chinese-black);
     border-radius: 6px;
     width: 70%;
     font-size: 12pt;
     font-weight: bold;
     padding-left: 12px;
     height: 64px;
-    color: var(--violet);
+    color: var(--chinese-black);
 }
 ::placeholder {
-    color: var(--violet);
+    color: var(--chinese-black);
 }
 
 #listControlButton {
     border: 0;
     border-radius: 6px;
     color: var(--white);
-    font-size: 12pt;
+    font-size: 10pt;
+    min-width: fit-content;
     font-weight: bold;
     width: 25%;
-    background-color: var(--violet);
+    background-color: var(--congo-pink);
     cursor: pointer;
     height: 64px;
     margin-left: 5%;
@@ -311,6 +304,6 @@ label {
     font-size: 12pt;
     display: inline-block;
     width: 86px;
-    color: var(--violet);
+    color: var(--chinese-black);
     font-weight: bold;
 }
