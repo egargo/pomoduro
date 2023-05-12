@@ -18,7 +18,7 @@
 
 ## 📋 Contents
 
--   [About](#️-about)
+-   [About](#ℹ️-about)
 -   [Features](#-features)
 -   [To do](#-to-do)
 -   [Technologies used](#-technologies-used)
