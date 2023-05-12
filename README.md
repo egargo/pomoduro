@@ -16,7 +16,7 @@
 
 </div>
 
-## Contents
+## 📋 Contents
 
 -   [About](#about)
 -   [Features](#features)
@@ -24,13 +24,13 @@
     -   [POMODURO](#pomoduro)
     -   [Resources](#resources)
 
-### About
+### ℹ️ About
 
 POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 
 &#x1F468;&#x200D;&#x1F4BB; with &#x1F90D; for &#x1F41D;
 
-### Features
+### ✨ Features
 
 -   [x] Easy to use
 -   [x] Pomodoro
@@ -57,7 +57,7 @@ POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 -   [x] Progressive Web App (PWA) support
 -   [x] Responsive design
 
-#### To do
+### 📝 To do
 
 _Note_: The current implementation of the To do list feature does not have the capabilities mentioned below, it only hides the task that's been clicked (marked as done).
 
@@ -65,7 +65,7 @@ _Note_: The current implementation of the To do list feature does not have the c
     -   [ ] Check button to mark task as done
     -   [ ] X button to delete task
 
-##### Bugs
+### 🐞 Bugs
 
 _Note_: Checked items are fixed bugs.
 
@@ -74,28 +74,28 @@ _Note_: Checked items are fixed bugs.
 -   [ ] Start button does not work on mobile devices running Chromium-based browsers
     -   [ ] Play/Pause button
 
-#### Technologies used
+### 💻 Technologies used
 
-##### Programming Language
+#### 💾 Programming Language
 
 -   CSS 3
 -   HTML 5
 -   JavaScript ES6
 
-##### Other Tools
+#### 🧰 Other Tools
 
 -   Git
 -   GitHub
 -   GitHub Pages
 -   VS Code (Vim + Live Server + Prettier)
 
-### License
+### 📄 License
 
-#### POMODURO
+#### 🍅 POMODURO
 
 POMODURO, the Wep App and the source code, is provided under the [MIT License](./LICENSE).
 
-#### Resources
+#### 🧰 Other resources
 
 -   Audio
     -   [Three-Note Doorbell or Notification](https://freesound.org/people/eqylizer/sounds/624599) under [the Creative Commons 0 License](https://creativecommons.org/publicdomain/zero/1.0).
