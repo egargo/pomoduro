@@ -18,11 +18,15 @@
 
 ## 📋 Contents
 
--   [About](#about)
--   [Features](#features)
--   [License](#license)
-    -   [POMODURO](#pomoduro)
-    -   [Resources](#resources)
+-   [About](#ℹ️-about)
+-   [Features](#✨-features)
+-   [To do](#📝-to-do)
+-   [Technologies used](#💻-technologies-used)
+    -   [Programming lanugages](#💾-programming-languages)
+    -   [Other tools](#🧰-other-tools)
+-   [License](#📄-license)
+    -   [POMODURO](#🍅-pomoduro)
+    -   [Other resources](#🧰-other-resources)
 
 ### ℹ️ About
 
@@ -76,13 +80,13 @@ _Note_: Checked items are fixed bugs.
 
 ### 💻 Technologies used
 
-#### 💾 Programming Language
+#### 💾 Programming languages
 
 -   CSS 3
 -   HTML 5
 -   JavaScript ES6
 
-#### 🧰 Other Tools
+#### 🧰 Other tools
 
 -   Git
 -   GitHub
