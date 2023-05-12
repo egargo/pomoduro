@@ -1,31 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
 
 :root {
-    --blueRegular: #518a58;
-    --blueLight: #639669;
-    --blueDark: #4a7f51;
-
-    --grey: #0d1117;
-
-    --base: #d95550;
+    --chinese-black: #121212;
+    --gainsboro: #dbdcdd;
+    --congo-pink: #fb7b7b;
     --white: #ffffff;
-    --card: #dc635e;
-    --grey1: #e9e9ed;
-
-    --blueRegular: #397097;
-    --blueLight: #4d7fa2;
-    --blueDark: #34678b;
+    --cultured: #f6f5f4;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    scrollbar-color: var(--congo-pink) transparent;
 }
 
 html,
 body {
     align-items: center;
-    background-color: var(--blueRegular);
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -35,22 +27,26 @@ body {
     width: 100%;
 }
 
-header {
+#header {
     align-items: center;
+    /* border-bottom: 1px solid var(--congo-pink); */
+    background-color: #f6f5f4;
     display: flex;
-    padding: 2% 0 2% 0;
-    width: 95%;
+    padding: 12pt 20pt 12pt 20pt;
+    width: 100%;
     height: 60px;
-    max-width: 620px;
     margin-bottom: 40px;
     justify-content: space-between;
-    border-bottom: 1px solid #00000025;
 }
 
-header h1 {
-    font-size: 20px;
+header {
+    width: 100%;
+}
+
+#header h1 {
+    font-size: 12pt;
     font-weight: bold;
-    color: var(--white);
+    color: var(--chinese-black);
 }
 
 #logo {
@@ -76,14 +72,15 @@ main {
     text-align: center;
     padding: 30px 0 30px;
     flex-direction: column;
-    background-color: #ffffff15;
+    background-color: var(--cultured);
 }
 
 #todoListTasks {
     padding: 0;
     height: auto;
     overflow: auto;
-    background-color: transparent;
+    background-color: var(--white);
+    border: 0;
 }
 
 .todoListCard {
@@ -91,14 +88,12 @@ main {
     padding: 6%;
     font-size: 16pt;
     width: 100%;
-    background-color: var(--blueLight);
-    color: var(--white);
+    color: var(--chinese-black);
     font-weight: bold;
-    border: 0;
     border-radius: 2%;
-    display: table-row;
-    margin: 0 0 2% 0;
+    margin: 0 0 6px 0;
     cursor: pointer;
+    background-color: var(--cultured);
 }
 main nav,
 main ul {
@@ -106,8 +101,8 @@ main ul {
 }
 
 #pomoduroTimer {
-    color: var(--white);
-    font-size: 86pt;
+    color: var(--chinese-black);
+    font-size: 76pt;
     display: inline-block;
     width: 100%;
     margin-top: 20px;
@@ -125,22 +120,21 @@ main ul {
     cursor: pointer;
     font-size: 12pt;
     margin-top: 20px;
-    color: var(--blueRegular);
+    color: var(--chinese-black);
     border-radius: 6px;
     font-weight: bold;
     padding: 12.2px 20px;
     background-color: var(--white);
-    box-shadow: #d6d6d6 0px 6px 0px;
 }
 
 #settingsControlButton {
     border: 0;
     border-radius: 6px;
     cursor: pointer;
-    color: #ffffff;
-    font-size: 12px;
+    color: var(--white);
+    font-size: 12pt;
     padding: 6px 12px;
-    background-color: #222222;
+    background-color: var(--chinese-black);
     display: inline-block;
     margin: 0 2% 2% 0;
 }
@@ -155,17 +149,20 @@ main ul {
     text-align: center;
     padding: 6px 16px 6px 16px;
     height: auto;
-    color: #ffffff;
-    background-color: var(--blueLight);
+    color: var(--white);
+    background-color: var(--chinese-black);
 }
 
 #pomodoro-study,
 #pomodoro-break {
-    background-color: transparent;
+    color: var(--chinese-black);
     width: 25%;
 }
-#pomodoro-timer-mode-active {
-    background-color: var(--blueRegular);
+#pomodoro-study {
+    background-color: var(--gainsboro);
+}
+#pomodoro-break {
+    background-color: transparent;
 }
 
 #settings {
@@ -178,7 +175,7 @@ main ul {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(246, 245, 244, 0.5);
 }
 
 #settings-content {
@@ -191,11 +188,11 @@ main ul {
 #settings-footer {
     font-size: 12px;
     padding: 2% 0 2% 0;
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--chinese-black);
 }
 
 #settings-footer a {
-    color: var(--blueRegular);
+    color: var(--congo-pink);
 }
 
 #settings-footer li + li::before {
@@ -211,12 +208,12 @@ main ul {
 }
 
 #settings-header {
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1px solid var(--chinese-black);
     padding: 0 0 2% 0;
 }
 #settings-header h1 {
     font-weight: bold;
-    color: #222222;
+    color: var(--chinese-black);
 }
 
 #settings-input {
@@ -224,14 +221,14 @@ main ul {
 }
 
 #settings-close {
-    color: var(--blueDark);
+    color: var(--congo-pink);
     float: right;
     font-weight: bold;
 }
 
 #settings-note {
     padding: 2% 0 2% 0;
-    color: #666666;
+    color: var(--chinese-black);
     font-weight: bold;
     font-size: 12px;
 }
@@ -239,13 +236,13 @@ main ul {
 #settings,
 #settings-content {
     padding: 20px 20px 20px 20px;
-    animation: modal-animation;
     animation-duration: 0.5s;
 }
 
 #settings-close:hover,
 #settings-lose:focus {
-    color: #000;
+    color: var(--dark);
+    font-weight: bold;
     text-decoration: none;
     cursor: pointer;
 }
@@ -253,47 +250,50 @@ main ul {
 #timeWork,
 #timeBreak {
     border-radius: 6px;
-    background-color: rgb(239, 239, 239);
-    font-size: 16px;
-    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--chinese-black);
+    font-size: 12pt;
+    padding: 12px;
     box-shadow: none;
-    border: medium none;
-    color: rgb(85, 85, 85);
+    color: var(--chinese-black);
+    font-weight: bold;
     width: 50%;
     box-sizing: border-box;
 }
 
 #duroList {
-    background-color: transparent;
+    background-color: var(--white);
     flex-direction: row;
+    background-image: none;
+    border: 0;
 }
 
 #addTask {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--chinese-black);
     border-radius: 6px;
     width: 70%;
-    font-size: 16px;
+    font-size: 12pt;
     font-weight: bold;
     padding-left: 12px;
     height: 64px;
-    color: #222222;
+    color: var(--chinese-black);
+}
+::placeholder {
+    color: var(--chinese-black);
 }
 
 #listControlButton {
-    border: 1px dashed #ffffff;
+    border: 0;
     border-radius: 6px;
-    color: #ffffff;
-    font-size: 16px;
+    color: var(--white);
+    font-size: 10pt;
+    min-width: fit-content;
     font-weight: bold;
     width: 25%;
-    background-color: var(--blueLight);
+    background-color: var(--congo-pink);
     cursor: pointer;
     height: 64px;
     margin-left: 5%;
-}
-
-#listControlButton:hover {
-    background-color: var(--blueDark);
 }
 
 input {
@@ -301,9 +301,8 @@ input {
 }
 
 label {
-    font-size: 12x;
+    font-size: 12pt;
     display: inline-block;
-    width: 86px;
-    color: #666666;
+    color: var(--chinese-black);
     font-weight: bold;
 }

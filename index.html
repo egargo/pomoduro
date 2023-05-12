@@ -5,26 +5,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="res/icons/pomoDuro.png" />
+    <!-- <link rel="icon" type="image/x-icon" href="res/icons/pomoDuro-white.png" /> -->
     <link rel="manifest" href="manifest.json" />
+    <meta name="application-name" content="POMODURO">
+    <meta name="theme-color" content="#561981">
+    <meta name="description" content="A description of the page">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="google" content="notranslate">
+    <meta property="og:url" content="https://egargo.github.io/pomoduro">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="POMODURO">
+    <meta property="og:image" content="https://egargo.github.io/pomoduro/preview.png">
+    <meta property="og:image:alt" content="POMODURO">
+    <meta property="og:description" content="A simple productivity web app.">
+    <meta property="og:site_name" content="POMODURO">
+    <meta property="og:locale" content="en_GB">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <noscript>POMODURO requires JavaScript to run.</noscript>
-    <title>POMODURO</title>
+    <title>🍅 POMODURO</title>
 </head>
 
 <body>
     <header>
-        <a id="logo" href="/pomoduro">
-            <img src="res/icons/pomoDuro-white.png">
-            <h1>POMODURO</h1>
-        </a>
-        <div>
-            <ul>
-                <li>
-                    <input id="settingsOpenControlButton" type="button" value="Settings" onclick="pomoDuroSettings()" />
-                </li>
-            </ul>
+        <div id="header">
+            <a id="logo" href="/pomoduro">
+                <h1>🍅 POMODURO</h1>
+            </a>
+            <div>
+                <ul>
+                    <li>
+                        <input id="settingsOpenControlButton" type="button" value="⚙️ Settings"
+                            onclick="pomoDuroSettings()"></input>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -32,22 +50,22 @@
         <div id="pomodoro-durations">
             <ul>
                 <li>
-                    <input id="pomodoro-study" type="button" value="Study" />
-                    <input id="pomodoro-break" type="button" value="Break" />
+                    <input id="pomodoro-study" type="button" value="💻 Study" />
+                    <input id="pomodoro-break" type="button" value="☕ Break" />
                 </li>
             </ul>
         </div>
 
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
-            <input id="timerControlButton" type="button" value="START" onclick="pomoDuroStartTimer()" />
-            <input id="pomodoroStopButton" type="button" value="STOP" onclick="pomoDuroResetTimer()" />
+            <input id="timerControlButton" type="button" value="▶️ START" onclick="pomoDuroStartTimer()" />
+            <input id="pomodoroStopButton" type="button" value="🔄 RESET" onclick="pomoDuroResetTimer()" />
         </div>
     </main>
 
     <div id="duroList">
         <input id="addTask" type="text" placeholder="Add task" autocomplete="off" />
-        <input id="listControlButton" type="button" value="Add Task" onclick="duroListAddTask()">
+        <input id="listControlButton" type="button" value="✍️ Add Task" onclick="duroListAddTask()">
     </div>
 
     <div id="todoListTasks"></div>
@@ -56,32 +74,32 @@
         <div id="settings-content">
             <div id="settings-header">
                 <span id="settings-close">&times;</span>
-                <h1>Settings</h1>
+                <h1>🍅 POMODURO Settings</h1>
             </div>
             <p id="settings-note">&#8251; Updating the settings will reload the POMODURO Web App.</p>
             <div id="settings-input">
-                <label>Work time</label>
+                <label>💻 Study time</label>
                 <input id="timeWork" type="number" min="1" step="1" />
             </div>
             <div id="settings-input">
-                <label>Break time</label>
+                <label>☕ Break time</label>
                 <input id="timeBreak" type="number" min="1" step="1" />
             </div>
             <div>
-                <input id="settingsControlButton" type="button" value="Save Pomodoro settings"
+                <input id="settingsControlButton" type="button" value="💾 Save Pomodoro settings"
                     onclick="settingsReload();" />
-                <input id="settingsControlButton" type="button" value="Reset Pomodoro settings"
+                <input id="settingsControlButton" type="button" value="🔄 Reset Pomodoro settings"
                     onclick="settingsResetPomodoro();" />
-                <input id="settingsControlButton" type="button" value="Reset To do list"
+                <input id="settingsControlButton" type="button" value="🔄 Reset To do list"
                     onclick="settingsResetTodoList()" />
             </div>
             <div id="settings-footer">
                 <div>
                     <ul>
-                        <li><a href="/pomoduro">Home</a></li>
-                        <li><a id="url-about" target="_blank" rel="noopener noreferrer">About</a></li>
-                        <li><a id="url-github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        <li><a id="url-license" target="_blank" rel="noopener noreferrer">License</a></li>
+                        <li><a href="/pomoduro">Home ↗️</a></li>
+                        <li><a id="url-about" target="_blank" rel="noopener noreferrer">About ↗️</a></li>
+                        <li><a id="url-github" target="_blank" rel="noopener noreferrer">GitHub ↗️</a></li>
+                        <li><a id="url-license" target="_blank" rel="noopener noreferrer">License ↗️</a></li>
                     </ul>
                 </div>
                 <div id="settings-license">
