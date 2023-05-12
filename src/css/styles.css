@@ -303,7 +303,6 @@ input {
 label {
     font-size: 12pt;
     display: inline-block;
-    width: 86px;
     color: var(--chinese-black);
     font-weight: bold;
 }
