@@ -100,4 +100,4 @@ timeBreak.addEventListener('input', (event) => {
     }
 });
 
-pomoDuroSettings();
+// pomoDuroSettings();
