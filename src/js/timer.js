@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Check if notification is allowed, otherwise ask the user to allow the
 // notifications.
 const pomoduroNotifyCheck = () => {

@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 let duroListTasks = JSON.parse(localStorage.getItem('todo') || '[]');
 
 const duroListAddTask = () => {
