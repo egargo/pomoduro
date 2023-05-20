@@ -13,6 +13,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     scrollbar-color: var(--congo-pink) transparent;
 }
 
