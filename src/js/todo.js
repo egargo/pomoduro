@@ -27,10 +27,14 @@ let duroListTasks = JSON.parse(localStorage.getItem('todo') || '[]');
 const duroListAddTask = () => {
     let taskName = document.getElementById('addTask').value;
 
-    if (addTask.value !== '') {
+    // If the task is not empty or does not only contains whitespaces, add the
+    // task to todo list.
+    // When adding the task to todo list, trim the leading and trailing
+    // whitespaces.
+    if (!addTask.value.match(/^\s*$/)) {
         duroListTasks.push({
             ...{
-                title: taskName,
+                title: taskName.trim(),
                 status: 'Pending',
             },
         });
