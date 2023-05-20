@@ -24,35 +24,7 @@
 
 'use strict';
 
-// Check if notification is allowed, otherwise ask the user to allow the
-// notifications.
-const pomoduroNotifyCheck = () => {
-    if (Notification.permission === 'granted') {
-        console.log('Notifications: enabled');
-    } else {
-        Notification.requestPermission().then((permission) => {
-            if (permission === 'granted') {
-                console.log('Notifications: enabled');
-            }
-        });
-    }
-};
-
-const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
-
-const pomoduroNotifyMessage = (notifyMessage) => {
-    new Notification('POMODURO', {
-        // icon: 'res/icons/pomoDuro-white.png',
-        // icon: '🍅',
-        icon: 'res/icons/pomoduro.png',
-        body: notifyMessage,
-    });
-};
-
-const pomoduroSendNotify = (notifyMessage) => {
-    pomoduroNotifyMessage(notifyMessage);
-    pomoduroSoundNotify();
-};
+import { pomoduroSendNotify } from './notify.js';
 
 // If the 'study' and 'break' in localStorage does not exist, set its value to
 // '25' and '5', respectively.
@@ -60,6 +32,7 @@ const pomoduroStudyTime = localStorage.getItem('study') || '25';
 const pomoduroBreakTime = localStorage.getItem('break') || '5';
 
 let pomoduroTimer = document.getElementById('pomoduroTimer');
+let pomodoroStopButton = document.getElementById('pomodoroStopButton');
 let timerControlButton = document.getElementById('timerControlButton');
 
 pomoduroTimer.innerText =
@@ -76,7 +49,7 @@ const pomoduroReset = () => {
 };
 
 // Start pomoDuro timer.
-const pomoDuroStartTimer = () => {
+export const pomoDuroStartTimer = () => {
     pomoduroSendNotify(
         pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
     );
@@ -127,7 +100,7 @@ const updateButton = () => {
     };
 };
 
-const pomoduroSwitchTimerMode = () => {
+export const pomoduroSwitchTimerMode = () => {
     let pomodoro_study = document.getElementById('pomodoro-study');
     let pomodoro_break = document.getElementById('pomodoro-break');
     // let pomodoro_timer = document.getElementById('pomoduroTimer');
@@ -151,5 +124,9 @@ const pomoduroSwitchTimerMode = () => {
     });
 };
 
-pomoduroSwitchTimerMode();
-pomoduroNotifyCheck();
+timerControlButton.addEventListener('click', () => {
+    pomoDuroStartTimer();
+});
+pomodoroStopButton.addEventListener('click', () => {
+    pomoDuroResetTimer();
+});
