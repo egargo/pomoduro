@@ -109,5 +109,18 @@ const todoListDisplayTasks = () => {
     }
 };
 
-// Call the display function initially to display any tasks already in the array.
-todoListDisplayTasks();
+// Call the display function initially to display any tasks already in
+// the array.
+if (duroListTasks.length !== 0) {
+    todoListDisplayTasks();
+}
+
+// If the 'Add task' button is clicked, or the 'Enter' key is clicked while
+// typing on the 'Add task' input field, add the task to todo list.
+document.getElementById('listControlButton').addEventListener('click', () => {
+    duroListAddTask();
+});
+
+document.getElementById('addTask').addEventListener('keypress', (event) => {
+    event.key === 'Enter' ? duroListAddTask() : null;
+});
