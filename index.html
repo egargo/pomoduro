@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="icon" type="image/x-icon" href="res/icons/pomoDuro-white.png" /> -->
+    <link rel="icon" type="image/x-icon" href="res/icons/pomoduro.svg" />
     <link rel="manifest" href="manifest.json" />
     <meta name="application-name" content="POMODURO">
     <meta name="theme-color" content="#561981">
@@ -26,14 +26,15 @@
     <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <noscript>POMODURO requires JavaScript to run.</noscript>
-    <title>🍅 POMODURO</title>
+    <title>POMODURO</title>
 </head>
 
 <body>
     <header>
         <div id="header">
             <a id="logo" href="/pomoduro">
-                <h1>🍅 POMODURO</h1>
+                <img src="res/icons/pomoduro.svg">
+                <h1>POMODURO</h1>
             </a>
             <div>
                 <ul>
@@ -45,7 +46,6 @@
             </div>
         </div>
     </header>
-
     <main>
         <div id="pomodoro-durations">
             <ul>
@@ -55,26 +55,22 @@
                 </li>
             </ul>
         </div>
-
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
             <input id="timerControlButton" type="button" value="▶️ START" onclick="pomoDuroStartTimer()" />
             <input id="pomodoroStopButton" type="button" value="⏹️ STOP" onclick="pomoDuroResetTimer()" />
         </div>
     </main>
-
     <div id="duroList">
         <input id="addTask" type="text" placeholder="Add task" autocomplete="off" />
         <input id="listControlButton" type="button" value="✍️ Add Task" onclick="duroListAddTask()">
     </div>
-
     <div id="todoListTasks"></div>
-
     <div id="settings">
         <div id="settings-content">
             <div id="settings-header">
                 <span id="settings-close">&times;</span>
-                <h1>🍅 POMODURO Settings</h1>
+                <h1>POMODURO Settings</h1>
             </div>
             <p id="settings-note">&#8251; Updating the settings will reload the POMODURO Web App.</p>
             <div id="settings-input">
@@ -111,7 +107,6 @@
             </div>
         </div>
     </div>
-
     <script src="src/js/config.js"></script>
     <script src="src/js/settings.js"></script>
     <script src="src/js/timer.js"></script>
