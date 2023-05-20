@@ -30,6 +30,7 @@ import { pomoduroSendNotify } from './notify.js';
 // '25' and '5', respectively.
 const pomoduroStudyTime = localStorage.getItem('study') || '25';
 const pomoduroBreakTime = localStorage.getItem('break') || '5';
+const pomodoroPauseTime = localStorage.getItem('pause');
 
 let pomoduroTimer = document.getElementById('pomoduroTimer');
 let pomodoroStopButton = document.getElementById('pomodoroStopButton');
@@ -42,9 +43,16 @@ pomoduroTimer.innerText =
 
 let intervalID, countDown, minute;
 
+pomodoroPauseTime === null
+    ? (countDown =
+          pomoduroTimer.getAttribute('name') === 'study'
+              ? pomoduroStudyTime * 60
+              : pomoduroBreakTime * 60)
+    : (pomodoroPauseTime = pomodoroPauseTime * 60);
+
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
-    document.title = '🍅 POMODURO';
+    document.title = 'POMODURO';
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
 };
 
@@ -60,16 +68,14 @@ export const pomoDuroStartTimer = () => {
         pomoDuroPauseTimer();
     };
 
-    countDown =
-        pomoduroTimer.getAttribute('name') === 'study'
-            ? pomoduroStudyTime * 60
-            : pomoduroBreakTime * 60;
+    console.log(pomodoroPauseTime);
 
     intervalID = setInterval(() => {
         countDown--;
         minute = (countDown / 60) >> (countDown / 60) % 1;
-        document.title = minute + ':' + (countDown % 60) + ' | 🍅 POMODURO';
+        document.title = minute + ':' + (countDown % 60) + ' - POMODURO';
         pomoduroTimer.innerText = minute + ':' + (countDown % 60);
+        localStorage.setItem('pause', countDown);
 
         if (countDown === 0) {
             pomoDuroResetTimer();
@@ -86,6 +92,7 @@ const pomoDuroPauseTimer = () => {
 const pomoDuroResetTimer = () => {
     // timerControlButton.style.backgroundColor = 'transparent';
     // timerControlButton.style.color = '#ffffff';
+    localStorage.removeItem('pause');
     timerControlButton.style = 'hover';
     pomoduroSendNotify('☕');
     updateButton();
@@ -124,9 +131,17 @@ export const pomoduroSwitchTimerMode = () => {
     });
 };
 
-timerControlButton.addEventListener('click', () => {
-    pomoDuroStartTimer();
-});
-pomodoroStopButton.addEventListener('click', () => {
-    pomoDuroResetTimer();
-});
+timerControlButton.addEventListener(
+    'click',
+    () => {
+        pomoDuroStartTimer();
+    },
+    { once: true }
+);
+pomodoroStopButton.addEventListener(
+    'click',
+    () => {
+        pomoDuroResetTimer();
+    },
+    { once: true }
+);
