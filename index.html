@@ -58,13 +58,13 @@
         </div>
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
-            <input id="timerControlButton" type="button" value="▶️ START" onclick="pomoDuroStartTimer()" />
-            <input id="pomodoroStopButton" type="button" value="⏹️ STOP" onclick="pomoDuroResetTimer()" />
+            <input id="timerControlButton" type="button" value="▶️ START" />
+            <input id="pomodoroStopButton" type="button" value="⏹️ STOP" />
         </div>
     </main>
     <div id="duroList">
-        <input id="addTask" type="text" placeholder="Add task" autocomplete="off" />
-        <input id="listControlButton" type="button" value="✍️ Add Task" onclick="duroListAddTask()">
+        <input id="addTask" type="text" placeholder="Add task" autocomplete="off">
+        <input id="listControlButton" type="button" value="✍️ Add Task">
     </div>
     <div id="todoListTasks"></div>
     <div id="settings">
@@ -108,10 +108,10 @@
             </div>
         </div>
     </div>
-    <script src="src/js/config.js"></script>
-    <script src="src/js/settings.js"></script>
-    <script src="src/js/timer.js"></script>
-    <script src="src/js/todo.js"></script>
+    <script src="src/js/config.js" type="module"></script>
+    <script src="src/js/settings.js" type="module"></script>
+    <script src="src/js/timer.js" type="module"></script>
+    <script src="src/js/todo.js" type="module"></script>
 </body>
 
 </html>
