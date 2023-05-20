@@ -1,6 +1,5 @@
 <div align="center">
-    <!-- <img alt="pomoDuro" src="./res/icons/pomoDuro-violet.png" height='32'/> -->
-    🍅
+    <img alt="pomoDuro" src="./res/icons/pomoduro.svg" height='32'/>
     <h1>POMODURO</h1>
     <p>A simple productivity web app.</p>
         <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" height='512' alt="pomoDuro">
@@ -106,4 +105,4 @@ POMODURO, the Wep App and the source code, is provided under the [MIT License](.
 -   Fonts
     -   [M PLUS Rounded 1c](https://fonts.google.com/specimen/M+PLUS+Rounded+1c/about?query=M+Plus+Rounded) under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 -   Icons
-    -   [OpenMoji](https://github.com/hfg-gmuend/openmoji)
+    -   [OpenMoji](https://github.com/hfg-gmuend/openmoji) under the [CC-BY-SA-4.0 license](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)
