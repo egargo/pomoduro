@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // A function to open the settings modal.
 const pomoDuroSettings = () => {
     let settings = document.getElementById('settings');

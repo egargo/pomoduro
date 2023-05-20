@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 const pomoDuroConfigs = {
     TITLE: 'POMODURO',
     YEAR: '2022',
