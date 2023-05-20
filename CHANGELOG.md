@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4] - 2020.05.20
+
+### Added
+
+-   Feature to continue timer after reload
+
+### Fixed
+
+-   Fix Start/Pause button bug
+-   Fix font style not displaying issue
+
 ## [0.2.3] - 2023.05.20
 
-### Fix
+### Fixed
 
 -   Fix font style on todo list cards
 
@@ -61,3 +72,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023.05.01
 
 -   First release
+
+[Unreleased]: https://github.com/egargo/pomoduro/compare/0.2.3...HEAD
+[0.2.4]: https://github.com/egargo/pomoduro/compare/0.2.3...0.2.4
+[0.2.3]: https://github.com/egargo/pomoduro/compare/0.2.2...0.2.3
+[0.2.2]: https://github.com/egargo/pomoduro/compare/0.2.1...0.2.2
+[0.2.1]: https://github.com/egargo/pomoduro/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/egargo/pomoduro/compare/0.1.1...0.2.0
+[0.1.1]: https://github.com/egargo/pomoduro/compare/0.1.0...0.1.1
+[0.1.0]: https://github.com/egargo/pomoduro/releases/tag/0.1.0
