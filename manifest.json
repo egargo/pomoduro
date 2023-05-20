@@ -4,7 +4,12 @@
     "start_url": "index.html",
     "icons": [
         {
-            "src": "res/icons/pomoDuro.png",
+            "src": "res/icons/pomoduro_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "res/icons/pomoduro_512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

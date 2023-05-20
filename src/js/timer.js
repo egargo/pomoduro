@@ -1,3 +1,27 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2022 - 2023 egargo
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 // Check if notification is allowed, otherwise ask the user to allow the
 // notifications.
 const pomoduroNotifyCheck = () => {
@@ -17,7 +41,8 @@ const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
 const pomoduroNotifyMessage = (notifyMessage) => {
     new Notification('POMODURO', {
         // icon: 'res/icons/pomoDuro-white.png',
-        icon: '🍅',
+        // icon: '🍅',
+        icon: 'res/icons/pomoduro.png',
         body: notifyMessage,
     });
 };
@@ -103,16 +128,15 @@ const updateButton = () => {
 const pomoduroSwitchTimerMode = () => {
     let pomodoro_study = document.getElementById('pomodoro-study');
     let pomodoro_break = document.getElementById('pomodoro-break');
-    let pomodoro_timer = document.getElementById('pomoduroTimer');
-
+    // let pomodoro_timer = document.getElementById('pomoduroTimer');
     // pomodoro_study.style = 'background-color: #561981';
 
     pomodoro_study.addEventListener('click', () => {
         pomodoro_study.style.backgroundColor = '#dbdcdd';
         pomodoro_study.style.color = '#121212';
         pomodoro_break.style = 'none';
-        pomodoro_timer.setAttribute('name', 'study');
-        pomodoro_timer.innerText = pomoduroStudyTime + ':00';
+        pomoduroTimer.setAttribute('name', 'study');
+        pomoduroTimer.innerText = pomoduroStudyTime + ':00';
     });
 
     pomodoro_break.addEventListener('click', () => {
@@ -120,8 +144,8 @@ const pomoduroSwitchTimerMode = () => {
         pomodoro_break.style.color = '#121212';
         pomodoro_study.style.backgroundColor = 'transparent';
         pomodoro_study.style.color = '#121212';
-        pomodoro_timer.setAttribute('name', 'break');
-        pomodoro_timer.innerText = pomoduroBreakTime + ':00';
+        pomoduroTimer.setAttribute('name', 'break');
+        pomoduroTimer.innerText = pomoduroBreakTime + ':00';
     });
 };
 

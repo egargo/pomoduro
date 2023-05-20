@@ -1,12 +1,40 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2022 - 2023 egargo
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 let duroListTasks = JSON.parse(localStorage.getItem('todo') || '[]');
 
 const duroListAddTask = () => {
     let taskName = document.getElementById('addTask').value;
 
-    if (addTask.value !== '') {
+    // If the task is not empty or does not only contains whitespaces, add the
+    // task to todo list.
+    // When adding the task to todo list, trim the leading and trailing
+    // whitespaces.
+    if (!addTask.value.match(/^\s*$/)) {
         duroListTasks.push({
             ...{
-                title: taskName,
+                title: taskName.trim(),
                 status: 'Pending',
             },
         });
