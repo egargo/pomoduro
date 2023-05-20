@@ -58,16 +58,29 @@ const pomoduroSendNotify = (notifyMessage) => {
 // '25' and '5', respectively.
 const pomoduroStudyTime = localStorage.getItem('study') || '25';
 const pomoduroBreakTime = localStorage.getItem('break') || '5';
+const pomodoroPauseTime = localStorage.getItem('pause');
 
 let pomoduroTimer = document.getElementById('pomoduroTimer');
 let timerControlButton = document.getElementById('timerControlButton');
 
-pomoduroTimer.innerText =
-    pomoduroStudyTime < 10
-        ? pomoduroStudyTime + ':00'
-        : pomoduroStudyTime + ':00';
-
 let intervalID, countDown, minute;
+
+if (pomodoroPauseTime === null) {
+    countDown =
+        pomoduroTimer.getAttribute('name') === 'study'
+            ? pomoduroStudyTime * 60
+            : pomoduroBreakTime * 60;
+
+    pomoduroTimer.innerText =
+        pomoduroStudyTime < 10
+            ? pomoduroStudyTime + ':00'
+            : pomoduroStudyTime + ':00';
+} else {
+    countDown = pomodoroPauseTime;
+
+    pomoduroTimer.innerText =
+        Math.floor(pomodoroPauseTime / 60) + ':' + (pomodoroPauseTime % 60);
+}
 
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
@@ -87,16 +100,18 @@ const pomoDuroStartTimer = () => {
         pomoDuroPauseTimer();
     };
 
-    countDown =
-        pomoduroTimer.getAttribute('name') === 'study'
-            ? pomoduroStudyTime * 60
-            : pomoduroBreakTime * 60;
+    // countDown =
+    //     pomoduroTimer.getAttribute('name') === 'study'
+    //         ? pomoduroStudyTime * 60
+    //         : pomoduroBreakTime * 60;
 
     intervalID = setInterval(() => {
         countDown--;
+        console.log(countDown);
         minute = (countDown / 60) >> (countDown / 60) % 1;
         document.title = minute + ':' + (countDown % 60) + ' | 🍅 POMODURO';
         pomoduroTimer.innerText = minute + ':' + (countDown % 60);
+        localStorage.setItem('pause', countDown);
 
         if (countDown === 0) {
             pomoDuroResetTimer();
@@ -113,6 +128,7 @@ const pomoDuroPauseTimer = () => {
 const pomoDuroResetTimer = () => {
     // timerControlButton.style.backgroundColor = 'transparent';
     // timerControlButton.style.color = '#ffffff';
+    localStorage.removeItem('pause');
     timerControlButton.style = 'hover';
     pomoduroSendNotify('☕');
     updateButton();
