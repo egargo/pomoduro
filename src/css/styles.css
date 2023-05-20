@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('/res/fonts/MPLUSRounded1c-Bold.ttf');
+}
 
 :root {
     --chinese-black: #121212;
@@ -10,7 +13,6 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
     scrollbar-color: var(--congo-pink) transparent;
 }
 
@@ -29,7 +31,6 @@ body {
 
 #header {
     align-items: center;
-    /* border-bottom: 1px solid var(--congo-pink); */
     background-color: #f6f5f4;
     display: flex;
     padding: 12pt 20pt 12pt 20pt;
