@@ -143,7 +143,7 @@ main ul {
 
 #pomodoro-study,
 #pomodoro-break,
-#settingsOpenControlButton {
+.settingsOpenControlButton {
     cursor: pointer;
     border: 0px;
     border-radius: 6px;
@@ -153,6 +153,7 @@ main ul {
     height: auto;
     color: var(--white);
     background-color: var(--chinese-black);
+    margin: 6px;
 }
 
 #pomodoro-study,
