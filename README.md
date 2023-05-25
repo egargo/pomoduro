@@ -62,20 +62,11 @@ POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 
 ### 📝 To do
 
-_Note_: The current implementation of the To do list feature does not have the capabilities mentioned below, it only hides the task that's been clicked (marked as done).
-
--   [ ] Add more features to To do list
-    -   [ ] Check button to mark task as done
-    -   [ ] X button to delete task
+See to do [here](./TODO.md).
 
 ### 🐞 Bugs
 
-_Note_: Checked items are fixed bugs.
-
--   [x] The settings needs to be clicked twice on every first load
--   [x] The web app needs to reload every time a task has been added/deleted
--   [ ] Start button does not work on mobile devices running Chromium-based browsers
-    -   [ ] Play/Pause button
+See known bugs [here](./BUGS.md).
 
 ### 💻 Technologies used
 

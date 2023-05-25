@@ -24,92 +24,81 @@
 
 'use strict';
 
-// Check if notification is allowed, otherwise ask the user to allow the
-// notifications.
-const pomoduroNotifyCheck = () => {
-    if (Notification.permission === 'granted') {
-        console.log('Notifications: enabled');
-    } else {
-        Notification.requestPermission().then((permission) => {
-            if (permission === 'granted') {
-                console.log('Notifications: enabled');
-            }
-        });
-    }
-};
-
-const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
-
-const pomoduroNotifyMessage = (notifyMessage) => {
-    new Notification('POMODURO', {
-        // icon: 'res/icons/pomoDuro-white.png',
-        // icon: '🍅',
-        icon: 'res/icons/pomoduro.png',
-        body: notifyMessage,
-    });
-};
-
-const pomoduroSendNotify = (notifyMessage) => {
-    pomoduroNotifyMessage(notifyMessage);
-    pomoduroSoundNotify();
-};
+import { pomoduroSendNotify } from './notify.js';
 
 // If the 'study' and 'break' in localStorage does not exist, set its value to
 // '25' and '5', respectively.
 const pomoduroStudyTime = localStorage.getItem('study') || '25';
 const pomoduroBreakTime = localStorage.getItem('break') || '5';
-const pomodoroPauseTime = localStorage.getItem('pause');
+let pomodoroPauseTime = localStorage.getItem('pause') || null;
 
 let pomoduroTimer = document.getElementById('pomoduroTimer');
+let pomodoroStopButton = document.getElementById('pomodoroStopButton');
 let timerControlButton = document.getElementById('timerControlButton');
 
 let intervalID, countDown, minute;
 
-if (pomodoroPauseTime === null) {
-    countDown =
-        pomoduroTimer.getAttribute('name') === 'study'
-            ? pomoduroStudyTime * 60
-            : pomoduroBreakTime * 60;
+pomoduroTimer.innerText =
+    pomoduroStudyTime < 10
+        ? pomoduroStudyTime + ':00'
+        : pomoduroStudyTime + ':00';
 
-    pomoduroTimer.innerText =
-        pomoduroStudyTime < 10
-            ? pomoduroStudyTime + ':00'
-            : pomoduroStudyTime + ':00';
-} else {
-    countDown = pomodoroPauseTime;
+// const pomoduroCheckTime = () => {
 
-    pomoduroTimer.innerText =
-        Math.floor(pomodoroPauseTime / 60) + ':' + (pomodoroPauseTime % 60);
-}
+// };
 
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
-    document.title = '🍅 POMODURO';
+
+    document.title = 'POMODURO';
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
+};
+
+const pomoDuroPauseTimer = (pause) => {
+    localStorage.setItem('pause', pause);
+    pomodoroPauseTime = pause;
+    updateButton();
+    clearInterval(intervalID);
 };
 
 // Start pomoDuro timer.
 const pomoDuroStartTimer = () => {
+    console.log('Pause: ', pomodoroPauseTime);
+    if (pomodoroPauseTime === null) {
+        // countDown =
+        // pomoduroTimer.getAttribute('name') === 'study'
+        // ? pomoduroStudyTime * 60
+        // : pomoduroBreakTime * 60;
+
+        if (pomoduroTimer.getAttribute('name') === 'study') {
+            console.log('Study!');
+            countDown = pomoduroStudyTime * 60;
+        } else {
+            console.log('Break!');
+            countDown = pomoduroBreakTime * 60;
+            console.log('Break time: ', countDown);
+        }
+    } else {
+        countDown = pomodoroPauseTime;
+
+        pomoduroTimer.innerText =
+            Math.floor(pomodoroPauseTime / 60) + ':' + (pomodoroPauseTime % 60);
+    }
+
     pomoduroSendNotify(
         pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
     );
     timerControlButton.value = '⏸️ PAUSE';
-    // timerControlButton.style.color = '#561981';
-    // timerControlButton.style.backgroundColor = '#ffffff';
     timerControlButton.onclick = () => {
-        pomoDuroPauseTimer();
+        console.log('>>> ', countDown);
+        pomoDuroPauseTimer(countDown);
     };
-
-    // countDown =
-    //     pomoduroTimer.getAttribute('name') === 'study'
-    //         ? pomoduroStudyTime * 60
-    //         : pomoduroBreakTime * 60;
 
     intervalID = setInterval(() => {
         countDown--;
         console.log(countDown);
         minute = (countDown / 60) >> (countDown / 60) % 1;
-        document.title = minute + ':' + (countDown % 60) + ' | 🍅 POMODURO';
+        document.title = minute + ':' + (countDown % 60) + ' - POMODURO';
         pomoduroTimer.innerText = minute + ':' + (countDown % 60);
         localStorage.setItem('pause', countDown);
 
@@ -120,14 +109,8 @@ const pomoDuroStartTimer = () => {
     }, 1000);
 };
 
-const pomoDuroPauseTimer = () => {
-    updateButton();
-    clearInterval(intervalID);
-};
-
 const pomoDuroResetTimer = () => {
-    // timerControlButton.style.backgroundColor = 'transparent';
-    // timerControlButton.style.color = '#ffffff';
+    pomodoroPauseTime = null;
     localStorage.removeItem('pause');
     timerControlButton.style = 'hover';
     pomoduroSendNotify('☕');
@@ -146,10 +129,9 @@ const updateButton = () => {
 const pomoduroSwitchTimerMode = () => {
     let pomodoro_study = document.getElementById('pomodoro-study');
     let pomodoro_break = document.getElementById('pomodoro-break');
-    // let pomodoro_timer = document.getElementById('pomoduroTimer');
-    // pomodoro_study.style = 'background-color: #561981';
 
     pomodoro_study.addEventListener('click', () => {
+        console.log('Study: ', pomoduroStudyTime);
         pomodoro_study.style.backgroundColor = '#dbdcdd';
         pomodoro_study.style.color = '#121212';
         pomodoro_break.style = 'none';
@@ -158,6 +140,7 @@ const pomoduroSwitchTimerMode = () => {
     });
 
     pomodoro_break.addEventListener('click', () => {
+        console.log('Break: ', pomoduroBreakTime);
         pomodoro_break.style.backgroundColor = '#dbdcdd';
         pomodoro_break.style.color = '#121212';
         pomodoro_study.style.backgroundColor = 'transparent';
@@ -167,5 +150,10 @@ const pomoduroSwitchTimerMode = () => {
     });
 };
 
+timerControlButton.onclick = () => {
+    pomoDuroStartTimer();
+};
+pomodoroStopButton.onclick = () => {
+    pomoDuroResetTimer();
+};
 pomoduroSwitchTimerMode();
-pomoduroNotifyCheck();

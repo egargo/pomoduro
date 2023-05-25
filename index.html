@@ -9,7 +9,7 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="application-name" content="POMODURO">
     <meta name="theme-color" content="#561981">
-    <meta name="description" content="A description of the page">
+    <meta name="description" content="A simple productivity web app.">
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="google" content="nositelinkssearchbox">
@@ -21,7 +21,7 @@
     <meta property="og:image:alt" content="POMODURO">
     <meta property="og:description" content="A simple productivity web app.">
     <meta property="og:site_name" content="POMODURO">
-    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale" content="en">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
@@ -40,7 +40,7 @@
             <div>
                 <ul>
                     <li>
-                        <input id="settingsOpenControlButton" type="button" value="⚙️ Settings"
+                        <input id="settingsOpen" class="settingsOpenControlButton" type="button" value="⚙️ Settings"
                             onclick="pomoDuroSettings()"></input>
                     </li>
                 </ul>
@@ -58,13 +58,13 @@
         </div>
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
-            <input id="timerControlButton" type="button" value="▶️ START" onclick="pomoDuroStartTimer()" />
-            <input id="pomodoroStopButton" type="button" value="⏹️ STOP" onclick="pomoDuroResetTimer()" />
+            <input id="timerControlButton" type="button" value="▶️ START" />
+            <input id="pomodoroStopButton" type="button" value="🔄 RESET" />
         </div>
     </main>
     <div id="duroList">
-        <input id="addTask" type="text" placeholder="Add task" autocomplete="off" />
-        <input id="listControlButton" type="button" value="✍️ Add Task" onclick="duroListAddTask()">
+        <input id="addTask" type="text" placeholder="Add task" autocomplete="off">
+        <input id="listControlButton" type="button" value="✍️ Add Task">
     </div>
     <div id="todoListTasks"></div>
     <div id="settings">
@@ -83,12 +83,12 @@
                 <input id="timeBreak" type="number" min="1" step="1" />
             </div>
             <div>
-                <input id="settingsControlButton" type="button" value="💾 Save Pomodoro settings"
-                    onclick="settingsReload();" />
-                <input id="settingsControlButton" type="button" value="🔄 Reset Pomodoro settings"
-                    onclick="settingsResetPomodoro();" />
-                <input id="settingsControlButton" type="button" value="🔄 Reset To do list"
-                    onclick="settingsResetTodoList()" />
+                <input id="settingsSave" class="settingsOpenControlButton" type="button"
+                    value="💾 Save Pomodoro settings" />
+                <input id="settingsResetPomodoro" class="settingsOpenControlButton" type="button"
+                    value="🔄 Reset Pomodoro settings" />
+                <input id="settingsResetTodoList" class="settingsOpenControlButton" type="button"
+                    value="🔄 Reset To do list" />
             </div>
             <div id="settings-footer">
                 <div>
@@ -108,10 +108,10 @@
             </div>
         </div>
     </div>
-    <script src="src/js/config.js"></script>
-    <script src="src/js/settings.js"></script>
-    <script src="src/js/timer.js"></script>
-    <script src="src/js/todo.js"></script>
+    <script src="src/js/config.js" type="module"></script>
+    <script src="src/js/settings.js" type="module"></script>
+    <script src="src/js/timer.js" type="module"></script>
+    <script src="src/js/todo.js" type="module"></script>
 </body>
 
 </html>

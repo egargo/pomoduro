@@ -7,7 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.4] - 2020.05.20
+## [0.2.5] - 2023.05.25
+
+### Added
+
+-   Feature to add task by either clicking the 'Add task' button or by clicking the Enter key.
+
+### Changed
+
+-   Changed `STOP` to `RESET` button.
+
+### Fixed
+
+-   Fixed START/PAUSE button bug.
+
+## [0.2.4] - 2023.05.20
 
 ### Added
 
@@ -73,7 +87,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First release
 
-[Unreleased]: https://github.com/egargo/pomoduro/compare/0.2.3...HEAD
+[Unreleased]: https://github.com/egargo/pomoduro/compare/0.2.5...HEAD
+[0.2.5]: https://github.com/egargo/pomoduro/compare/0.2.4...0.2.5
 [0.2.4]: https://github.com/egargo/pomoduro/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/egargo/pomoduro/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/egargo/pomoduro/compare/0.2.1...0.2.2

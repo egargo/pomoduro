@@ -24,17 +24,14 @@
 
 'use strict';
 
+const openSettings = document.getElementById('settingsOpen');
+
 // A function to open the settings modal.
-const pomoDuroSettings = () => {
+export const pomoDuroSettings = () => {
     let settings = document.getElementById('settings');
+    settings.style.display = 'flex';
+
     let settingsClose = document.getElementById('settings-close');
-
-    let openSettings = document.getElementById('settingsOpenControlButton');
-
-    // If the user clicks on the 'Settings' button, open the settings modal.
-    openSettings.onclick = () => {
-        settings.style.display = 'flex';
-    };
 
     // If the user clicks on the '×' (&times;), close the modal.
     settingsClose.onclick = () => {
@@ -51,7 +48,7 @@ const pomoDuroSettings = () => {
 };
 
 // Reload the page whenever the user updates the settings.
-// This is a temporary fix, as I don't have solution to dynamically update the
+// This is a temporary fix, as I don't have a solution to dynamically update the
 // page.
 const settingsReload = () => {
     window.location.reload();
@@ -92,7 +89,6 @@ timeWork.addEventListener('input', (event) => {
         settingsSavePomodoro('study', event.target.value);
     }
 });
-
 let timeBreak = document.getElementById('timeBreak');
 timeBreak.addEventListener('input', (event) => {
     if (event.target.value !== '') {
@@ -100,4 +96,11 @@ timeBreak.addEventListener('input', (event) => {
     }
 });
 
-pomoDuroSettings();
+
+
+document.getElementById('settingsSave').onclick = () => { settingsReload(); };
+document.getElementById('settingsResetPomodoro').onclick = () => { settingsResetPomodoro(); };
+document.getElementById('settingsResetTodoList').onclick = () => { settingsResetTodoList(); };
+
+
+openSettings.onclick = () => { pomoDuroSettings(); };
