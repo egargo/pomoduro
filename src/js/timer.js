@@ -54,7 +54,9 @@ const pomoduroReset = () => {
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
 };
 
-const pomoDuroPauseTimer = () => {
+const pomoDuroPauseTimer = (pause) => {
+    localStorage.setItem('pause', pause);
+    pomodoroPauseTime = pause;
     updateButton();
     clearInterval(intervalID);
 };
@@ -88,7 +90,8 @@ const pomoDuroStartTimer = () => {
     );
     timerControlButton.value = '⏸️ PAUSE';
     timerControlButton.onclick = () => {
-        pomoDuroPauseTimer();
+        console.log('>>> ', countDown);
+        pomoDuroPauseTimer(countDown);
     };
 
     intervalID = setInterval(() => {
@@ -147,6 +150,10 @@ const pomoduroSwitchTimerMode = () => {
     });
 };
 
-timerControlButton.onclick = () => { pomoDuroStartTimer(); };
-pomodoroStopButton.onclick = () => { pomoDuroResetTimer(); };
+timerControlButton.onclick = () => {
+    pomoDuroStartTimer();
+};
+pomodoroStopButton.onclick = () => {
+    pomoDuroResetTimer();
+};
 pomoduroSwitchTimerMode();
