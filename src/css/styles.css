@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'M PLUS Rounded 1c';
-    src: url('/res/fonts/MPLUSRounded1c-Bold.ttf');
+    src: url('../../res/fonts/MPLUSRounded1c-Bold.ttf');
 }
 
 :root {
