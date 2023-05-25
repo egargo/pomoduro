@@ -40,7 +40,7 @@
             <div>
                 <ul>
                     <li>
-                        <input id="settingsOpenControlButton" type="button" value="⚙️ Settings"
+                        <input id="settingsOpen" class="settingsOpenControlButton" type="button" value="⚙️ Settings"
                             onclick="pomoDuroSettings()"></input>
                     </li>
                 </ul>
@@ -83,12 +83,12 @@
                 <input id="timeBreak" type="number" min="1" step="1" />
             </div>
             <div>
-                <input id="settingsControlButton" type="button" value="💾 Save Pomodoro settings"
-                    onclick="settingsReload();" />
-                <input id="settingsControlButton" type="button" value="🔄 Reset Pomodoro settings"
-                    onclick="settingsResetPomodoro();" />
-                <input id="settingsControlButton" type="button" value="🔄 Reset To do list"
-                    onclick="settingsResetTodoList()" />
+                <input id="settingsSave" class="settingsOpenControlButton" type="button"
+                    value="💾 Save Pomodoro settings" />
+                <input id="settingsResetPomodoro" class="settingsOpenControlButton" type="button"
+                    value="🔄 Reset Pomodoro settings" />
+                <input id="settingsResetTodoList" class="settingsOpenControlButton" type="button"
+                    value="🔄 Reset To do list" />
             </div>
             <div id="settings-footer">
                 <div>
