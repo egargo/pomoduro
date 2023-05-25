@@ -30,48 +30,70 @@ import { pomoduroSendNotify } from './notify.js';
 // '25' and '5', respectively.
 const pomoduroStudyTime = localStorage.getItem('study') || '25';
 const pomoduroBreakTime = localStorage.getItem('break') || '5';
-const pomodoroPauseTime = localStorage.getItem('pause');
+let pomodoroPauseTime = localStorage.getItem('pause') || null;
 
 let pomoduroTimer = document.getElementById('pomoduroTimer');
 let pomodoroStopButton = document.getElementById('pomodoroStopButton');
 let timerControlButton = document.getElementById('timerControlButton');
+
+let intervalID, countDown, minute;
 
 pomoduroTimer.innerText =
     pomoduroStudyTime < 10
         ? pomoduroStudyTime + ':00'
         : pomoduroStudyTime + ':00';
 
-let intervalID, countDown, minute;
+// const pomoduroCheckTime = () => {
 
-pomodoroPauseTime === null
-    ? (countDown =
-          pomoduroTimer.getAttribute('name') === 'study'
-              ? pomoduroStudyTime * 60
-              : pomoduroBreakTime * 60)
-    : (pomodoroPauseTime = pomodoroPauseTime * 60);
+// };
 
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
+
     document.title = 'POMODURO';
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
 };
 
+const pomoDuroPauseTimer = () => {
+    updateButton();
+    clearInterval(intervalID);
+};
+
 // Start pomoDuro timer.
-export const pomoDuroStartTimer = () => {
+const pomoDuroStartTimer = () => {
+    console.log('Pause: ', pomodoroPauseTime);
+    if (pomodoroPauseTime === null) {
+        // countDown =
+        // pomoduroTimer.getAttribute('name') === 'study'
+        // ? pomoduroStudyTime * 60
+        // : pomoduroBreakTime * 60;
+
+        if (pomoduroTimer.getAttribute('name') === 'study') {
+            console.log('Study!');
+            countDown = pomoduroStudyTime * 60;
+        } else {
+            console.log('Break!');
+            countDown = pomoduroBreakTime * 60;
+            console.log('Break time: ', countDown);
+        }
+    } else {
+        countDown = pomodoroPauseTime;
+
+        pomoduroTimer.innerText =
+            Math.floor(pomodoroPauseTime / 60) + ':' + (pomodoroPauseTime % 60);
+    }
+
     pomoduroSendNotify(
         pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
     );
     timerControlButton.value = '⏸️ PAUSE';
-    // timerControlButton.style.color = '#561981';
-    // timerControlButton.style.backgroundColor = '#ffffff';
     timerControlButton.onclick = () => {
         pomoDuroPauseTimer();
     };
 
-    console.log(pomodoroPauseTime);
-
     intervalID = setInterval(() => {
         countDown--;
+        console.log(countDown);
         minute = (countDown / 60) >> (countDown / 60) % 1;
         document.title = minute + ':' + (countDown % 60) + ' - POMODURO';
         pomoduroTimer.innerText = minute + ':' + (countDown % 60);
@@ -84,14 +106,8 @@ export const pomoDuroStartTimer = () => {
     }, 1000);
 };
 
-const pomoDuroPauseTimer = () => {
-    updateButton();
-    clearInterval(intervalID);
-};
-
 const pomoDuroResetTimer = () => {
-    // timerControlButton.style.backgroundColor = 'transparent';
-    // timerControlButton.style.color = '#ffffff';
+    pomodoroPauseTime = null;
     localStorage.removeItem('pause');
     timerControlButton.style = 'hover';
     pomoduroSendNotify('☕');
@@ -107,13 +123,12 @@ const updateButton = () => {
     };
 };
 
-export const pomoduroSwitchTimerMode = () => {
+const pomoduroSwitchTimerMode = () => {
     let pomodoro_study = document.getElementById('pomodoro-study');
     let pomodoro_break = document.getElementById('pomodoro-break');
-    // let pomodoro_timer = document.getElementById('pomoduroTimer');
-    // pomodoro_study.style = 'background-color: #561981';
 
     pomodoro_study.addEventListener('click', () => {
+        console.log('Study: ', pomoduroStudyTime);
         pomodoro_study.style.backgroundColor = '#dbdcdd';
         pomodoro_study.style.color = '#121212';
         pomodoro_break.style = 'none';
@@ -122,6 +137,7 @@ export const pomoduroSwitchTimerMode = () => {
     });
 
     pomodoro_break.addEventListener('click', () => {
+        console.log('Break: ', pomoduroBreakTime);
         pomodoro_break.style.backgroundColor = '#dbdcdd';
         pomodoro_break.style.color = '#121212';
         pomodoro_study.style.backgroundColor = 'transparent';
@@ -131,17 +147,6 @@ export const pomoduroSwitchTimerMode = () => {
     });
 };
 
-timerControlButton.addEventListener(
-    'click',
-    () => {
-        pomoDuroStartTimer();
-    },
-    { once: true }
-);
-pomodoroStopButton.addEventListener(
-    'click',
-    () => {
-        pomoDuroResetTimer();
-    },
-    { once: true }
-);
+timerControlButton.onclick = () => { pomoDuroStartTimer(); };
+pomodoroStopButton.onclick = () => { pomoDuroResetTimer(); };
+pomoduroSwitchTimerMode();
