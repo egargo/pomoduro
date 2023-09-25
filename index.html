@@ -26,6 +26,11 @@
     <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <title>POMODURO</title>
+
+    <script src="src/js/config.js" type="module"></script>
+    <script src="src/js/settings.js" type="module"></script>
+    <script src="src/js/timer.js" type="module"></script>
+    <script src="src/js/todo.js" type="module"></script>
 </head>
 
 <noscript>POMODURO requires JavaScript to run.</noscript>
@@ -58,8 +63,8 @@
         </div>
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
-            <input id="timerControlButton" type="button" value="▶️ START" onclick="pomoDuroStartTimer()"></input>
-            <input id="pomodoroStopButton" type="button" value="🔄 RESET" onclick="pomoDuroResetTimer()"></input>
+            <input id="timerControlButton" type="button" value="▶️ START">
+            <input id="pomodoroStopButton" type="button" value="🔄 RESET">
         </div>
     </main>
     <div id="duroList">
@@ -108,10 +113,6 @@
             </div>
         </div>
     </div>
-    <script src="src/js/config.js" type="module"></script>
-    <script src="src/js/settings.js" type="module"></script>
-    <script src="src/js/timer.js" type="module"></script>
-    <script src="src/js/todo.js" type="module"></script>
 </body>
 
 </html>
