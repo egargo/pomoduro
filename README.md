@@ -81,7 +81,8 @@ See known bugs [here](./BUGS.md).
 -   Git
 -   GitHub
 -   GitHub Pages
--   VS Code (Vim + Live Server + Prettier)
+-   Neovim
+-   Python 3 HTTP Server
 
 ### 📄 License
 
