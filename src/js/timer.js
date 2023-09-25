@@ -36,16 +36,15 @@ let pomoduroTimer = document.getElementById('pomoduroTimer');
 let pomodoroStopButton = document.getElementById('pomodoroStopButton');
 let timerControlButton = document.getElementById('timerControlButton');
 
+let pomodoro_study = document.getElementById('pomodoro-study');
+let pomodoro_break = document.getElementById('pomodoro-break');
+
 let intervalID, countDown, minute;
 
 pomoduroTimer.innerText =
     pomoduroStudyTime < 10
         ? pomoduroStudyTime + ':00'
         : pomoduroStudyTime + ':00';
-
-// const pomoduroCheckTime = () => {
-
-// };
 
 const pomoduroReset = () => {
     countDown = pomoduroStudyTime * 60;
@@ -65,16 +64,17 @@ const pomoDuroPauseTimer = (pause) => {
 const pomoDuroStartTimer = () => {
     console.log('Pause: ', pomodoroPauseTime);
     if (pomodoroPauseTime === null) {
-        // countDown =
-        // pomoduroTimer.getAttribute('name') === 'study'
-        // ? pomoduroStudyTime * 60
-        // : pomoduroBreakTime * 60;
+        console.log('disabled = true;');
 
         if (pomoduroTimer.getAttribute('name') === 'study') {
-            console.log('Study!');
+            pomodoro_break.disabled = true;
+            pomodoro_break.style.cursor = 'wait';
+            console.log('Mode: Study');
             countDown = pomoduroStudyTime * 60;
         } else {
-            console.log('Break!');
+            pomodoro_study.disabled = true;
+            pomodoro_study.style.cursor = 'wait';
+            console.log('Mode: Break');
             countDown = pomoduroBreakTime * 60;
             console.log('Break time: ', countDown);
         }
@@ -88,6 +88,7 @@ const pomoDuroStartTimer = () => {
     pomoduroSendNotify(
         pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
     );
+
     timerControlButton.value = '⏸️ PAUSE';
     timerControlButton.onclick = () => {
         console.log('>>> ', countDown);
@@ -110,6 +111,12 @@ const pomoDuroStartTimer = () => {
 };
 
 const pomoDuroResetTimer = () => {
+    pomodoro_study.disabled = false;
+    pomodoro_study.style.cursor = 'pointer';
+
+    pomodoro_break.disabled = false;
+    pomodoro_break.style.cursor = 'pointer';
+
     pomodoroPauseTime = null;
     localStorage.removeItem('pause');
     timerControlButton.style = 'hover';
@@ -127,9 +134,6 @@ const updateButton = () => {
 };
 
 const pomoduroSwitchTimerMode = () => {
-    let pomodoro_study = document.getElementById('pomodoro-study');
-    let pomodoro_break = document.getElementById('pomodoro-break');
-
     pomodoro_study.addEventListener('click', () => {
         console.log('Study: ', pomoduroStudyTime);
         pomodoro_study.style.backgroundColor = '#dbdcdd';
