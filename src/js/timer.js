@@ -119,7 +119,7 @@ const pomoDuroResetTimer = () => {
 
     pomodoroPauseTime = null;
     localStorage.removeItem('pause');
-    timerControlButton.style = 'hover';
+    // timerControlButton.style = 'hover';
     pomoduroSendNotify('☕');
     updateButton();
     clearInterval(intervalID);
