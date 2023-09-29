@@ -30,4 +30,7 @@ export const pomoduroSendNotify = (notifyMessage) => {
     pomoduroSoundNotify();
 };
 
-pomoduroNotifyCheck();
+// Check if user is in mobile devices (Android and iOS) based on their UA.
+if (!navigator.userAgent.match(/Android/i) || !navigator.userAgent.match(/iPhone/i)) {
+    pomoduroNotifyCheck();
+}
