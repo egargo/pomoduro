@@ -30,4 +30,6 @@ export const pomoduroSendNotify = (notifyMessage) => {
     pomoduroSoundNotify();
 };
 
-pomoduroNotifyCheck();
+if (!navigator.userAgent.match(/(Android|iPhone)/i)) {
+    pomoduroNotifyCheck();
+}

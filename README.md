@@ -2,7 +2,7 @@
     <img alt="pomoDuro" src="./res/icons/pomoduro.svg" height='32'/>
     <h1>POMODURO</h1>
     <p>A simple productivity web app.</p>
-        <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" height='512' alt="pomoDuro">
+        <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" alt="pomoDuro">
     </a>
     <div>
         <img alt="license" src="https://img.shields.io/github/license/egargo/pomoduro?labelColor=white&color=fb7b7b&style=for-the-badge"/>
@@ -29,36 +29,13 @@
 
 ### ℹ️ About
 
-POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
+:tomato: POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 
 &#x1F468;&#x200D;&#x1F4BB; with &#x1F90D; for &#x1F41D;
 
 ### ✨ Features
 
--   [x] Easy to use
--   [x] Pomodoro
-    -   [x] Start
-    -   [x] Pause
-    -   [x] Stop
--   [x] Work/Study switch
-    -   [x] Work
-    -   [x] Study
--   [x] To do list
-    -   [x] Add new task
-    -   [x] Display tasks
-    -   [x] Delete task
--   [x] Settings
-    -   [x] Set study time
-    -   [x] Set break time
-    -   [x] Save Pomodoro settings
-    -   [x] Reset To do list
-    -   [x] Reset Pomodoro settings
--   [x] Notifications
-    -   [x] Start notification
-    -   [x] End notification
-    -   [x] Alarm tone
--   [x] Progressive Web App (PWA) support
--   [x] Responsive design
+See features [here](./FEATURES.md).
 
 ### 📝 To do
 
@@ -83,6 +60,7 @@ See known bugs [here](./BUGS.md).
 -   GitHub Pages
 -   Neovim
 -   Python 3 HTTP Server
+-   Docker
 
 ### 📄 License
 

@@ -125,8 +125,7 @@ main ul {
     color: var(--chinese-black);
     border-radius: 6px;
     font-weight: bold;
-    /* padding: 12.2px 20px; */
-    padding: 12px 20px;
+    padding: 12.2px 20px;
     background-color: var(--white);
 }
 

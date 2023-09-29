@@ -1,0 +1,26 @@
+# ✨ Features
+
+-   [x] Easy to use
+-   [x] Pomodoro
+    -   [x] Start
+    -   [x] Pause
+    -   [x] Stop
+-   [x] Work/Study switch
+    -   [x] Work
+    -   [x] Study
+-   [x] To do list
+    -   [x] Add new task
+    -   [x] Display tasks
+    -   [x] Delete task
+-   [x] Settings
+    -   [x] Set study time
+    -   [x] Set break time
+    -   [x] Save Pomodoro settings
+    -   [x] Reset To do list
+    -   [x] Reset Pomodoro settings
+-   [x] Notifications
+    -   [x] Start notification
+    -   [x] End notification
+    -   [x] Alarm tone
+-   [x] Progressive Web App (PWA) support
+-   [x] Responsive design
