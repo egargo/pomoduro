@@ -60,6 +60,7 @@ See known bugs [here](./BUGS.md).
 -   GitHub Pages
 -   Neovim
 -   Python 3 HTTP Server
+-   Docker
 
 ### 📄 License
 
