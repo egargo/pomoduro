@@ -53,11 +53,6 @@ const pomoduroReset = () => {
     pomoduroTimer.innerText = pomoduroStudyTime + ':00';
 };
 
-const pomoDuroPauseTimer = () => {
-    updateButton();
-    clearInterval(intervalID);
-};
-
 // Start pomoDuro timer.
 const pomoDuroStartTimer = () => {
     timerControlButton.disabled = true;
