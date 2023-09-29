@@ -24,7 +24,7 @@
 
 'use strict';
 
-import { pomoduroSendNotify } from './notify.js';
+// import { pomoduroSendNotify } from './notify.js';
 
 // If the 'study' and 'break' in localStorage does not exist, set its value to
 // '25' and '5', respectively.
@@ -85,9 +85,9 @@ const pomoDuroStartTimer = () => {
             Math.floor(pomodoroPauseTime / 60) + ':' + (pomodoroPauseTime % 60);
     }
 
-    pomoduroSendNotify(
-        pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
-    );
+    // pomoduroSendNotify(
+    //     pomoduroTimer.getAttribute('name') === 'study' ? '💻' : '☕'
+    // );
 
     timerControlButton.value = '⏸️ PAUSE';
     timerControlButton.onclick = () => {
@@ -119,8 +119,8 @@ const pomoDuroResetTimer = () => {
 
     pomodoroPauseTime = null;
     localStorage.removeItem('pause');
-    // timerControlButton.style = 'hover';
-    pomoduroSendNotify('☕');
+    timerControlButton.style = 'hover';
+    // pomoduroSendNotify('☕');
     updateButton();
     clearInterval(intervalID);
     pomoduroReset();
