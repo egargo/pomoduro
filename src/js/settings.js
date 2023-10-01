@@ -24,6 +24,9 @@
 
 'use strict';
 
+const DEFAULT_STUDY_TIME = '30';
+const DEFAULT_BREAK_TIME = '10';
+
 const openSettings = document.getElementById('settingsOpen');
 
 // A function to open the settings modal.
@@ -59,6 +62,12 @@ const settingsResetTodoList = () => {
     settingsReload();
 };
 
+// Call this function everytime the page refreshes.
+(function() {
+    document.getElementById('timeWork').value = localStorage.getItem('study') || DEFAULT_STUDY_TIME;
+    document.getElementById('timeBreak').value = localStorage.getItem('break') || DEFAULT_BREAK_TIME;
+})();
+
 // Resetting the pomodoro settings will remove the 'study' and 'break' key-value
 // pair from the Local Storage.
 // This will also set the timeWork and timeBreak to the default value of 25 and
@@ -68,15 +77,10 @@ const settingsResetPomodoro = () => {
     window.localStorage.removeItem('study');
     window.localStorage.removeItem('break');
 
-    document.getElementById('timeWork').value = '25';
-    document.getElementById('timeBreak').value = '5';
+    window.localStorage.setItem('study', DEFAULT_STUDY_TIME);
+    window.localStorage.setItem('break', DEFAULT_BREAK_TIME);
 
     settingsReload();
-};
-
-const settingsDefaultPomodoro = () => {
-    window.localStorage.setItem('study', '25');
-    window.localStorage.setItem('break', '5');
 };
 
 const settingsSavePomodoro = (lSKey, lsValue) => {
@@ -89,6 +93,7 @@ timeWork.addEventListener('input', (event) => {
         settingsSavePomodoro('study', event.target.value);
     }
 });
+
 let timeBreak = document.getElementById('timeBreak');
 timeBreak.addEventListener('input', (event) => {
     if (event.target.value !== '') {
@@ -96,11 +101,10 @@ timeBreak.addEventListener('input', (event) => {
     }
 });
 
-
-
 document.getElementById('settingsSave').onclick = () => { settingsReload(); };
-document.getElementById('settingsResetPomodoro').onclick = () => { settingsResetPomodoro(); };
-document.getElementById('settingsResetTodoList').onclick = () => { settingsResetTodoList(); };
 
+document.getElementById('settingsResetPomodoro').onclick = () => { settingsResetPomodoro(); };
+
+document.getElementById('settingsResetTodoList').onclick = () => { settingsResetTodoList(); };
 
 openSettings.onclick = () => { pomoDuroSettings(); };
