@@ -24,33 +24,19 @@
 
 'use strict';
 
-const pomoDuroConfigs = {
-    TITLE: 'POMODURO',
-    GH_PAGES: '/pomoduro',
-    YEAR: '2022',
-    CURRENT_YEAR: new Date().getFullYear(),
-    GITHUB: 'https://github.com/egargo/pomoduro',
-    LICENSE: 'https://github.com/egargo/pomoduro/blob/master/LICENSE',
-    ABOUT: 'https://github.com/egargo/pomoduro/blob/master/README.md',
-};
-
-let home_url = document.getElementById('logo');
-
-if(window.location.href.match(/github/i)) {
-    home_url.setAttribute('href', '/pomoduro');
-} else {
-    home_url.setAttribute('href', '/');
+export function enableButton(button, text) {
+    button.disabled = false;
+    button.style.color = '#121212';
+    button.textContent = text;
 }
 
-document
-    .getElementById('url-about')
-    .setAttribute('href', pomoDuroConfigs.ABOUT);
-document
-    .getElementById('url-github')
-    .setAttribute('href', pomoDuroConfigs.GITHUB);
-document
-    .getElementById('url-license')
-    .setAttribute('href', pomoDuroConfigs.LICENSE);
+export function disableButton(button, text) {
+    button.disabled = true;
+    button.style.color = '#DBDCDD';
+    button.textContent = text;
+}
 
-document.getElementById('year').innerText +=
-    pomoDuroConfigs.YEAR + ' - ' + new Date().getFullYear();
+export function switchTimerMode(button, colorBG, color) {
+    button.style.backgroundColor = colorBG;
+    button.style.color = color;
+}

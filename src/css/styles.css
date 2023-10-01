@@ -158,6 +158,7 @@ main ul {
 
 #pomodoro-study,
 #pomodoro-break {
+    border: 1px solid var(--gainsboro);
     color: var(--chinese-black);
     width: 25%;
 }
@@ -182,6 +183,7 @@ main ul {
 }
 
 #settings-content {
+    border: 1px solid var(--gainsboro);
     background-color: var(--white);
     height: fit-content;
     margin: auto;

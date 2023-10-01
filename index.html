@@ -37,7 +37,7 @@
 
 <body>
     <header>
-        <div id="header">
+        <nav id="header">
             <a id="logo" href="/pomoduro">
                 <img src="res/icons/pomoduro.svg">
                 <h1>POMODURO</h1>
@@ -45,31 +45,30 @@
             <div>
                 <ul>
                     <li>
-                        <input id="settingsOpen" class="settingsOpenControlButton" type="button" value="⚙️ Settings"
-                            onclick="pomoDuroSettings()"></input>
+                        <button id="settingsOpen" class="settingsOpenControlButton">⚙️ Settings</button>
                     </li>
                 </ul>
             </div>
-        </div>
+        </nav>
     </header>
     <main>
         <div id="pomodoro-durations">
             <ul>
                 <li>
-                    <input id="pomodoro-study" type="button" value="💻 Study" />
-                    <input id="pomodoro-break" type="button" value="☕ Break" />
+                    <button id="pomodoro-study">💻 Study</button>
+                    <button id="pomodoro-break">☕ Break</button>
                 </li>
             </ul>
         </div>
         <div id="pomoDuro">
             <span id="pomoduroTimer" name="study"></span>
-            <input id="timerControlButton" type="button" value="▶️ START">
-            <input id="pomodoroStopButton" type="button" value="⏹️ STOP">
+            <button id="timerControlButton" type="button">▶️ START</button>
+            <button id="pomodoroStopButton" type="button">⏹️ STOP</button>
         </div>
     </main>
     <div id="duroList">
         <input id="addTask" type="text" placeholder="Add task" autocomplete="off">
-        <input id="listControlButton" type="button" value="✍️ Add Task">
+        <button id="listControlButton">✍️ Add Task</button>
     </div>
     <div id="todoListTasks"></div>
     <div id="settings">
@@ -88,12 +87,9 @@
                 <input id="timeBreak" type="number" min="1" step="1" />
             </div>
             <div>
-                <input id="settingsSave" class="settingsOpenControlButton" type="button"
-                    value="💾 Save Pomodoro settings" />
-                <input id="settingsResetPomodoro" class="settingsOpenControlButton" type="button"
-                    value="🔄 Reset Pomodoro settings" />
-                <input id="settingsResetTodoList" class="settingsOpenControlButton" type="button"
-                    value="🔄 Reset To do list" />
+                <button id="settingsSave" class="settingsOpenControlButton">💾 Save POMODURO settings</button>
+                <button id="settingsResetPomodoro" class="settingsOpenControlButton">🔄 Reset POMODURO settings</button>
+                <button id="settingsResetTodoList" class="settingsOpenControlButton">🔄 Reset To do list</button>
             </div>
             <div id="settings-footer">
                 <div>
