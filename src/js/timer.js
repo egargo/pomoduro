@@ -48,10 +48,16 @@ pomoduroTimer.innerText =
         ? pomoduroStudyTime + ':00'
         : pomoduroStudyTime + ':00';
 
-const pomoduroReset = () => {
-    countDown = pomoduroStudyTime * 60;
+const pomoduroReset = (timerMode) => {
     document.title = 'POMODURO';
-    pomoduroTimer.innerText = pomoduroStudyTime + ':00';
+
+    if (timerMode === 'study') {
+        countDown = pomoduroStudyTime * 60;
+        pomoduroTimer.innerText = pomoduroStudyTime + ':00';
+    } else {
+        countDown = pomoduroBreakTime * 60;
+        pomoduroTimer.innerText = pomoduroBreakTime + ':00';
+    }
 };
 
 const pomoDuroStartTimer = () => {
@@ -88,26 +94,18 @@ const pomoDuroStartTimer = () => {
                 );
             }
 
-            pomoDuroResetTimer();
-            pomoduroReset();
+            pomoDuroResetTimer(pomoduroTimer.getAttribute('name'));
         }
     }, 1000);
 };
 
-const pomoDuroResetTimer = () => {
+const pomoDuroResetTimer = (timerMode) => {
     enableButton(timerControlButton, '▶️ START');
     enableButton(pomodoro_study, '💻 Study');
     enableButton(pomodoro_break, '☕ Break');
 
-    updateButton();
     clearInterval(intervalID);
-    pomoduroReset();
-};
-
-const updateButton = () => {
-    timerControlButton.onclick = () => {
-        pomoDuroStartTimer();
-    };
+    pomoduroReset(timerMode);
 };
 
 (function() {
