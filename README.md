@@ -46,7 +46,7 @@ POMODURO, the Wep App and the source code, is provided under the [MIT License](.
 ### Credits
 
 -   Audio
-    -   [Three-Note Doorbell or Notification](https://freesound.org/people/eqylizer/sounds/624599) under [the Creative Commons 0 License](https://creativecommons.org/publicdomain/zero/1.0).
+    -   [Popcorn](https://www.zedge.net/ringtone/ed961a26-834d-4c90-b989-3e58f3b6de65)
 -   Fonts
     -   [M PLUS Rounded 1c](https://fonts.google.com/specimen/M+PLUS+Rounded+1c/about?query=M+Plus+Rounded) under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 -   Icons
