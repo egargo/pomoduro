@@ -14,7 +14,7 @@ const pomoduroNotifyCheck = () => {
     }
 };
 
-const pomoduroSoundNotify = () => new Audio('res/audio/notify.mp3').play();
+const pomoduroSoundNotify = () => new Audio('res/audio/popcorn.mp3').play();
 
 const pomoduroNotifyMessage = (notifyMessage) => {
     new Notification('POMODURO', {
