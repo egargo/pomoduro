@@ -99,8 +99,6 @@ const pomoDuroResetTimer = () => {
     enableButton(pomodoro_study, '💻 Study');
     enableButton(pomodoro_break, '☕ Break');
 
-    timerControlButton.style = 'hover';
-
     updateButton();
     clearInterval(intervalID);
     pomoduroReset();
