@@ -3,7 +3,7 @@
     <h1>POMODURO</h1>
     <p>A simple productivity web app.</p>
         &#x1F468;&#x200D;&#x1F4BB; with &#x1F90D; for &#x1F41D;
-        <a target="blank" rel="noopener noreferrer" href="https://egargo.github.io/pomoduro"><img src="./preview.png" alt="pomoDuro">
+        <a target="blank" rel="noopener noreferrer" href="https://pomoduro.vercel.app/"><img src="./preview.png" alt="pomoDuro">
     </a>
     <div>
         <img alt="license" src="https://img.shields.io/github/license/egargo/pomoduro?labelColor=white&color=fb7b7b&style=for-the-badge"/>
