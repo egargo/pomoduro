@@ -10,7 +10,6 @@
         <img alt="languages" src="https://img.shields.io/github/languages/top/egargo/pomoduro?labelColor=white&color=fb7b7b&style=for-the-badge"/>
         <img alt="repo-size" src="https://img.shields.io/github/repo-size/egargo/pomoduro?labelColor=white&color=fb7b7b&style=for-the-badge"/>
         <a rel="noopener noreferrer" href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?labelColor=white&color=fb7b7b&style=for-the-badge"></a>
-        <a rel="noopener noreferrer" href="https://pomoduro.vercel.app/"><img alt="website" src="https://img.shields.io/website?label=vercel&labelColor=white&down_color=red&down_message=down&up_color=fb7b7b&up_message=up&url=https://pomoduro.vercel.app/?&style=for-the-badge"/></a>
         <a rel="noopener noreferrer" href="https://egargo.github.io/pomoduro/"><img alt="website" src="https://img.shields.io/website?label=github%20pages&labelColor=white&down_color=red&down_message=down&up_color=fb7b7b&up_message=up&url=https://egargo.github.io/pomoduro/?&style=for-the-badge"/></a>
     </div>
 </div>
@@ -28,7 +27,7 @@ A simple productivity web app.
 
 POMODURO (Plan, Organize, Manage, Oversee, Delegate, Unique, Rest, On-time)
 
-[Try POMODURO now, it's live!](https://pomoduro.vercel.app/)
+[Try POMODURO now, it's live!](https://egargo.github.io/pomoduro/)
 
 > [!NOTE]
 > POMODURO is not a spelling mistake, it is intentionally named as it is.
