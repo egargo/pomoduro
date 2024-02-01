@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,50 +22,52 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
-const DEFAULT_STUDY_TIME = '30';
-const DEFAULT_BREAK_TIME = '10';
+const DEFAULT_STUDY_TIME = "25";
+const DEFAULT_BREAK_TIME = "5";
 
-const openSettings = document.getElementById('settingsOpen');
+const openSettings = document.getElementById("settingsOpen");
 
 // A function to open the settings modal.
 export const pomoDuroSettings = () => {
-    let settings = document.getElementById('settings');
-    settings.style.display = 'flex';
+  const settings = document.getElementById("settings");
+  settings.style.display = "flex";
 
-    let settingsClose = document.getElementById('settings-close');
+  const settingsClose = document.getElementById("settings-close");
 
-    // If the user clicks on the '×' (&times;), close the modal.
-    settingsClose.onclick = () => {
-        settings.style.display = 'none';
-    };
+  // If the user clicks on the '×' (&times;), close the modal.
+  settingsClose.onclick = () => {
+    settings.style.display = "none";
+  };
 
-    // If the user clicks on anywhere outside the settings modal,
-    // close the modal.
-    window.onclick = (event) => {
-        if (event.target === settings) {
-            settings.style.display = 'none';
-        }
-    };
+  // If the user clicks on anywhere outside the settings modal,
+  // close the modal.
+  window.onclick = (event) => {
+    if (event.target === settings) {
+      settings.style.display = "none";
+    }
+  };
 };
 
 // Reload the page whenever the user updates the settings.
 // This is a temporary fix, as I don't have a solution to dynamically update the
 // page.
 const settingsReload = () => {
-    window.location.reload();
+  window.location.reload();
 };
 
 const settingsResetTodoList = () => {
-    window.localStorage.removeItem('todo');
-    settingsReload();
+  window.localStorage.removeItem("todo");
+  settingsReload();
 };
 
 // Call this function everytime the page refreshes.
-(function() {
-    document.getElementById('timeWork').value = localStorage.getItem('study') || DEFAULT_STUDY_TIME;
-    document.getElementById('timeBreak').value = localStorage.getItem('break') || DEFAULT_BREAK_TIME;
+(function () {
+  document.getElementById("timeWork").value = localStorage.getItem("study") ||
+    DEFAULT_STUDY_TIME;
+  document.getElementById("timeBreak").value = localStorage.getItem("break") ||
+    DEFAULT_BREAK_TIME;
 })();
 
 // Resetting the pomodoro settings will remove the 'study' and 'break' key-value
@@ -74,37 +76,45 @@ const settingsResetTodoList = () => {
 // 5, repsectively.
 // Lastly, this will reload the page, refer to line:27.
 const settingsResetPomodoro = () => {
-    window.localStorage.removeItem('study');
-    window.localStorage.removeItem('break');
+  window.localStorage.removeItem("study");
+  window.localStorage.removeItem("break");
 
-    window.localStorage.setItem('study', DEFAULT_STUDY_TIME);
-    window.localStorage.setItem('break', DEFAULT_BREAK_TIME);
+  window.localStorage.setItem("study", DEFAULT_STUDY_TIME);
+  window.localStorage.setItem("break", DEFAULT_BREAK_TIME);
 
-    settingsReload();
+  settingsReload();
 };
 
 const settingsSavePomodoro = (lSKey, lsValue) => {
-    window.localStorage.setItem(lSKey, lsValue);
+  window.localStorage.setItem(lSKey, lsValue);
 };
 
-let timeWork = document.getElementById('timeWork');
-timeWork.addEventListener('input', (event) => {
-    if (event.target.value !== '') {
-        settingsSavePomodoro('study', event.target.value);
-    }
+const timeWork = document.getElementById("timeWork");
+timeWork.addEventListener("input", (event) => {
+  if (event.target.value !== "") {
+    settingsSavePomodoro("study", event.target.value);
+  }
 });
 
-let timeBreak = document.getElementById('timeBreak');
-timeBreak.addEventListener('input', (event) => {
-    if (event.target.value !== '') {
-        settingsSavePomodoro('break', event.target.value);
-    }
+const timeBreak = document.getElementById("timeBreak");
+timeBreak.addEventListener("input", (event) => {
+  if (event.target.value !== "") {
+    settingsSavePomodoro("break", event.target.value);
+  }
 });
 
-document.getElementById('settingsSave').onclick = () => { settingsReload(); };
+document.getElementById("settingsSave").onclick = () => {
+  settingsReload();
+};
 
-document.getElementById('settingsResetPomodoro').onclick = () => { settingsResetPomodoro(); };
+document.getElementById("settingsResetPomodoro").onclick = () => {
+  settingsResetPomodoro();
+};
 
-document.getElementById('settingsResetTodoList').onclick = () => { settingsResetTodoList(); };
+document.getElementById("settingsResetTodoList").onclick = () => {
+  settingsResetTodoList();
+};
 
-openSettings.onclick = () => { pomoDuroSettings(); };
+openSettings.onclick = () => {
+  pomoDuroSettings();
+};

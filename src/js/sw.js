@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
 }

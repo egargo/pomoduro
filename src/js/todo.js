@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
-let duroListTasks = JSON.parse(localStorage.getItem('todo') || '[]');
+const duroListTasks = JSON.parse(localStorage.getItem("todo") || "[]");
 
 const duroListAddTask = () => {
-    let taskName = document.getElementById('addTask').value;
+    const taskName = document.getElementById("addTask").value;
 
     // If the task is not empty or does not only contains whitespaces, add the
     // task to todo list.
@@ -37,34 +37,34 @@ const duroListAddTask = () => {
         duroListTasks.push({
             ...{
                 title: taskName.trim(),
-                status: 'Pending',
+                status: "Pending",
             },
         });
 
-        localStorage.setItem('todo', JSON.stringify(duroListTasks));
+        localStorage.setItem("todo", JSON.stringify(duroListTasks));
 
-        let newTaskKey = duroListTasks.length - 1;
-        let newTaskData = duroListTasks[newTaskKey];
+        const newTaskKey = duroListTasks.length - 1;
+        const newTaskData = duroListTasks[newTaskKey];
 
-        let todoListCard = document.createElement('div');
-        todoListCard.id = 'todoListCard-' + newTaskKey;
-        todoListCard.className = 'todoListCard';
+        const todoListCard = document.createElement("div");
+        todoListCard.id = "todoListCard-" + newTaskKey;
+        todoListCard.className = "todoListCard";
         todoListCard.innerText = newTaskData.title;
-        todoListCard.addEventListener('click', () => {
+        todoListCard.addEventListener("click", () => {
             todoListRemoveTask(newTaskKey);
         });
-        document.getElementById('todoListTasks').appendChild(todoListCard);
+        document.getElementById("todoListTasks").appendChild(todoListCard);
     }
-    document.getElementById('addTask').value = '';
+    document.getElementById("addTask").value = "";
 };
 
 const todoListRemoveTask = (taskKey) => {
     duroListTasks.map((_data, key) => {
         if (key === taskKey) {
-            duroListTasks[key].status = 'Done';
-            localStorage.setItem('todo', JSON.stringify(duroListTasks));
+            duroListTasks[key].status = "Done";
+            localStorage.setItem("todo", JSON.stringify(duroListTasks));
 
-            let todoListCard = document.getElementById('todoListCard-' + key);
+            const todoListCard = document.getElementById("todoListCard-" + key);
             if (todoListCard) {
                 todoListCard.remove();
             }
@@ -73,27 +73,27 @@ const todoListRemoveTask = (taskKey) => {
 };
 
 const todoListDisplayTasks = () => {
-    let todoListTasks = document.getElementById('todoListTasks');
+    const todoListTasks = document.getElementById("todoListTasks");
     let lastChild = null;
 
     if (duroListTasks.length !== 0) {
         duroListTasks.forEach((data, key) => {
-            if (data.status !== 'Done') {
+            if (data.status !== "Done") {
                 let todoListCard = document.getElementById(
-                    'todoListCard-' + key
+                    "todoListCard-" + key,
                 );
 
                 if (!todoListCard) {
-                    todoListCard = document.createElement('div');
-                    todoListCard.id = 'todoListCard-' + key;
-                    todoListCard.className = 'todoListCard';
+                    todoListCard = document.createElement("div");
+                    todoListCard.id = "todoListCard-" + key;
+                    todoListCard.className = "todoListCard";
                     todoListCard.innerText = data.title;
-                    todoListCard.addEventListener('click', () => {
+                    todoListCard.addEventListener("click", () => {
                         todoListRemoveTask(key);
                     });
                     todoListTasks.append(todoListCard);
                 } else {
-                    let cardText = todoListCard.innerText;
+                    const cardText = todoListCard.innerText;
                     if (cardText !== data.title) {
                         todoListCard.innerText = data.title;
                     }
@@ -117,10 +117,10 @@ if (duroListTasks.length !== 0) {
 
 // If the 'Add task' button is clicked, or the 'Enter' key is clicked while
 // typing on the 'Add task' input field, add the task to todo list.
-document.getElementById('listControlButton').addEventListener('click', () => {
+document.getElementById("listControlButton").addEventListener("click", () => {
     duroListAddTask();
 });
 
-document.getElementById('addTask').addEventListener('keypress', (event) => {
-    event.key === 'Enter' ? duroListAddTask() : null;
+document.getElementById("addTask").addEventListener("keypress", (event) => {
+    event.key === "Enter" ? duroListAddTask() : null;
 });

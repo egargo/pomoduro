@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,21 +22,21 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
 export function enableButton(button, text) {
-    button.disabled = false;
-    button.style.color = '#121212';
-    button.textContent = text;
+  button.disabled = false;
+  button.style.color = "#121212";
+  button.textContent = text;
 }
 
 export function disableButton(button, text) {
-    button.disabled = true;
-    button.style.color = '#DBDCDD';
-    button.textContent = text;
+  button.disabled = true;
+  button.style.color = "#DBDCDD";
+  button.textContent = text;
 }
 
 export function switchTimerMode(button, colorBG, color) {
-    button.style.backgroundColor = colorBG;
-    button.style.color = color;
+  button.style.backgroundColor = colorBG;
+  button.style.color = color;
 }

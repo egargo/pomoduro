@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,35 +22,35 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
 const pomoDuroConfigs = {
-    TITLE: 'POMODURO',
-    GH_PAGES: '/pomoduro',
-    YEAR: '2022',
-    CURRENT_YEAR: new Date().getFullYear(),
-    GITHUB: 'https://github.com/egargo/pomoduro',
-    LICENSE: 'https://github.com/egargo/pomoduro/blob/master/LICENSE',
-    ABOUT: 'https://github.com/egargo/pomoduro/blob/master/README.md',
+  TITLE: "POMODURO",
+  GH_PAGES: "/pomoduro",
+  YEAR: "2022",
+  CURRENT_YEAR: new Date().getFullYear(),
+  GITHUB: "https://github.com/egargo/pomoduro",
+  LICENSE: "https://github.com/egargo/pomoduro/blob/master/LICENSE",
+  ABOUT: "https://github.com/egargo/pomoduro/blob/master/README.md",
 };
 
-let home_url = document.getElementById('logo');
+const home_url = document.getElementById("logo");
 
-if(window.location.href.match(/github/i)) {
-    home_url.setAttribute('href', '/pomoduro');
+if (window.location.href.match(/github/i)) {
+  home_url.setAttribute("href", "/pomoduro");
 } else {
-    home_url.setAttribute('href', '/');
+  home_url.setAttribute("href", "/");
 }
 
 document
-    .getElementById('url-about')
-    .setAttribute('href', pomoDuroConfigs.ABOUT);
+  .getElementById("url-about")
+  .setAttribute("href", pomoDuroConfigs.ABOUT);
 document
-    .getElementById('url-github')
-    .setAttribute('href', pomoDuroConfigs.GITHUB);
+  .getElementById("url-github")
+  .setAttribute("href", pomoDuroConfigs.GITHUB);
 document
-    .getElementById('url-license')
-    .setAttribute('href', pomoDuroConfigs.LICENSE);
+  .getElementById("url-license")
+  .setAttribute("href", pomoDuroConfigs.LICENSE);
 
-document.getElementById('year').innerText +=
-    pomoDuroConfigs.YEAR + ' - ' + new Date().getFullYear();
+document.getElementById("year").innerText += pomoDuroConfigs.YEAR + " - " +
+  new Date().getFullYear();

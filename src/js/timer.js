@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2022 - 2023 egargo
+ * Copyright (c) 2022 - 2024 egargo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,75 +22,76 @@
  * SOFTWARE.
  */
 
-'use strict';
+"use strict";
 
-import { checkUA } from './ua.js';
-import { disableButton, enableButton, switchTimerMode } from './lib.js';
-import { pomoduroSendNotify } from './notify.js';
+import { checkUA } from "./ua.js";
+import { disableButton, enableButton, switchTimerMode } from "./lib.js";
+import { pomoduroSendNotify } from "./notify.js";
 
 // If the 'study' and 'break' in localStorage does not exist, set its value to
 // '30' and '10', respectively.
-const pomoduroStudyTime = localStorage.getItem('study') || '30';
-const pomoduroBreakTime = localStorage.getItem('break') || '10';
+const pomoduroStudyTime = localStorage.getItem("study") || "30";
+const pomoduroBreakTime = localStorage.getItem("break") || "10";
 
-let pomoduroTimer = document.getElementById('pomoduroTimer');
+const pomoduroTimer = document.getElementById("pomoduroTimer");
 
-let pomodoroStopButton = document.getElementById('pomodoroStopButton');
-let timerControlButton = document.getElementById('timerControlButton');
+const pomodoroStopButton = document.getElementById("pomodoroStopButton");
+const timerControlButton = document.getElementById("timerControlButton");
 
-let pomodoro_study = document.getElementById('pomodoro-study');
-let pomodoro_break = document.getElementById('pomodoro-break');
+const pomodoro_study = document.getElementById("pomodoro-study");
+const pomodoro_break = document.getElementById("pomodoro-break");
 
 let intervalID, countDown, minute;
 
-pomoduroTimer.innerText =
-    pomoduroStudyTime < 10
-        ? pomoduroStudyTime + ':00'
-        : pomoduroStudyTime + ':00';
+pomoduroTimer.innerText = pomoduroStudyTime < 10
+    ? pomoduroStudyTime + ":00"
+    : pomoduroStudyTime + ":00";
 
 const pomoduroReset = () => {
-    document.title = 'POMODURO';
+    document.title = "POMODURO";
 
-    if(pomoduroTimer.getAttribute('name') === 'study') {
+    if (pomoduroTimer.getAttribute("name") === "study") {
         countDown = pomoduroStudyTime * 60;
-        pomoduroTimer.innerText = pomoduroStudyTime + ':00';
+        pomoduroTimer.innerText = pomoduroStudyTime + ":00";
     } else {
         countDown = pomoduroBreakTime * 60;
-        pomoduroTimer.innerText = pomoduroBreakTime + ':00';
+        pomoduroTimer.innerText = pomoduroBreakTime + ":00";
     }
 };
 
 const pomoDuroStartTimer = () => {
-    if (pomoduroTimer.getAttribute('name') === 'study') {
-        disableButton(pomodoro_break, 'Break');
-        disableButton(timerControlButton, 'START');
+    if (pomoduroTimer.getAttribute("name") === "study") {
+        disableButton(pomodoro_break, "Break");
+        disableButton(timerControlButton, "START");
         countDown = pomoduroStudyTime * 60;
     } else {
-        disableButton(pomodoro_study, 'Study');
-        disableButton(timerControlButton, 'START');
+        disableButton(pomodoro_study, "Study");
+        disableButton(timerControlButton, "START");
         countDown = pomoduroBreakTime * 60;
     }
 
-    if(checkUA() === true) {
+    if (checkUA() === true) {
         pomoduroSendNotify(
-            pomoduroTimer.getAttribute('name') ===
-                'study' ? `💻 ${pomoduroStudyTime} minute study started.`
-                : `☕ ${pomoduroBreakTime} minute break started.`
+            pomoduroTimer.getAttribute("name") ===
+                "study"
+                ? `💻 ${pomoduroStudyTime} minute study started.`
+                : `☕ ${pomoduroBreakTime} minute break started.`,
         );
     }
 
     intervalID = setInterval(() => {
         countDown--;
         minute = (countDown / 60) >> (countDown / 60) % 1;
-        document.title = minute + ':' + (countDown % 60) + ' - POMODURO';
-        pomoduroTimer.innerText = minute + ':' + (countDown % 60);
+        document.title = minute + ":" + (countDown % 60) + " - POMODURO";
+        pomoduroTimer.innerText = minute + ":" + (countDown % 60);
 
         if (countDown === 0) {
-            if(checkUA() === true) {
+            if (checkUA() === true) {
                 pomoduroSendNotify(
-                    pomoduroTimer.getAttribute('name') ===
-                        'study' ? `💻 ${pomoduroStudyTime} minute study ended.`
-                        : `☕ ${pomoduroBreakTime} minute break ended.`
+                    pomoduroTimer.getAttribute("name") ===
+                        "study"
+                        ? `💻 ${pomoduroStudyTime} minute study ended.`
+                        : `☕ ${pomoduroBreakTime} minute break ended.`,
                 );
             }
 
@@ -101,9 +102,9 @@ const pomoDuroStartTimer = () => {
 };
 
 const pomoDuroResetTimer = () => {
-    enableButton(timerControlButton, '▶️ START');
-    enableButton(pomodoro_study, '💻 Study');
-    enableButton(pomodoro_break, '☕ Break');
+    enableButton(timerControlButton, "▶️ START");
+    enableButton(pomodoro_study, "💻 Study");
+    enableButton(pomodoro_break, "☕ Break");
 
     updateButton();
     clearInterval(intervalID);
@@ -117,20 +118,20 @@ const updateButton = () => {
 };
 
 (function() {
-    pomodoro_study.addEventListener('click', () => {
-        switchTimerMode(pomodoro_study, '#dbdcdd', '#121212');
-        switchTimerMode(pomodoro_break, 'transparent', '#121212');
+    pomodoro_study.addEventListener("click", () => {
+        switchTimerMode(pomodoro_study, "#dbdcdd", "#121212");
+        switchTimerMode(pomodoro_break, "transparent", "#121212");
 
-        pomoduroTimer.setAttribute('name', 'study');
-        pomoduroTimer.innerText = pomoduroStudyTime + ':00';
+        pomoduroTimer.setAttribute("name", "study");
+        pomoduroTimer.innerText = pomoduroStudyTime + ":00";
     });
 
-    pomodoro_break.addEventListener('click', () => {
-        switchTimerMode(pomodoro_break, '#dbdcdd', '#121212');
-        switchTimerMode(pomodoro_study, 'transparent', '#121212');
+    pomodoro_break.addEventListener("click", () => {
+        switchTimerMode(pomodoro_break, "#dbdcdd", "#121212");
+        switchTimerMode(pomodoro_study, "transparent", "#121212");
 
-        pomoduroTimer.setAttribute('name', 'break');
-        pomoduroTimer.innerText = pomoduroBreakTime + ':00';
+        pomoduroTimer.setAttribute("name", "break");
+        pomoduroTimer.innerText = pomoduroBreakTime + ":00";
     });
 })();
 
@@ -139,6 +140,6 @@ timerControlButton.onclick = () => {
 };
 
 pomodoroStopButton.onclick = () => {
-    if(checkUA() === true) pomoduroSendNotify('⏹️ Timer stopped.');
+    if (checkUA() === true) pomoduroSendNotify("⏹️ Timer stopped.");
     pomoDuroResetTimer();
 };
