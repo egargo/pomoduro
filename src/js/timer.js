@@ -29,9 +29,9 @@ import { disableButton, enableButton, switchTimerMode } from "./lib.js";
 import { pomoduroSendNotify } from "./notify.js";
 
 // If the 'study' and 'break' in localStorage does not exist, set its value to
-// '30' and '10', respectively.
-const pomoduroStudyTime = localStorage.getItem("study") || "30";
-const pomoduroBreakTime = localStorage.getItem("break") || "10";
+// '25' and '5', respectively.
+const pomoduroStudyTime = localStorage.getItem("study") || "25";
+const pomoduroBreakTime = localStorage.getItem("break") || "5";
 
 const pomoduroTimer = document.getElementById("pomoduroTimer");
 
