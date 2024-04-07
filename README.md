@@ -40,7 +40,7 @@ Read the documentation [here](./DOCS.md).
 
 POMODURO, the Wep App and the source code, is provided under the [MIT License](./LICENSE).
 
-&copy; 2022 - 2023 egargo
+&copy; 2022 - 2024 egargo
 
 ### Credits
 
